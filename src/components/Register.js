@@ -8,7 +8,7 @@ class Register extends Component {
 
     render() {
         return (
-            <div>
+            <div className='wrapper'>
                 <h3>Register</h3>
                 <Form />
             </div>

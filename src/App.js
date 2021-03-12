@@ -5,14 +5,14 @@ import Contacts from './components/Contacts/Contacts';
 import Nav from './components/Nav/Nav';
 import Home from './components/Home'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Login from './components/Login';
+import Login from './components/Login/Login';
 import Register from './components/Register'
 
 
 function App() {
   return (
     <Router>
-      <div className="App">
+
         <div className='header'>
           <Nav />
           <Switch>
@@ -24,7 +24,7 @@ function App() {
           </Switch>
         </div>
 
-      </div>
+   
 
     </Router>
 

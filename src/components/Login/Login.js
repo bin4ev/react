@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import Form from './Form/Form'
-
+import Form from '../Form/Form'
+import './Login.css'
 class Login extends Component {
     constructor(props) {
         super(props)
@@ -8,7 +8,7 @@ class Login extends Component {
 
     render() {
         return (
-            <div>
+            <div className='wrapper'>
                 <h3>Login</h3>
                 <Form />
             </div>
