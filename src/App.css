@@ -1,0 +1,11 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+.App {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+
+
+

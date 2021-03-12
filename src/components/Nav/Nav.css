@@ -1,0 +1,23 @@
+nav {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background-color:rgba(0,0,0,0.06);
+    color: rgb(5, 5, 5);
+    }
+    .nav-links {
+     margin-right: 50px;
+      margin-left: auto;
+      cursor: pointer;
+      width: 30%;
+      justify-content: space-around;
+      display: flex;
+      text-align: center;
+      list-style: none;
+      
+    }
+    .logo {
+    margin-left: 150px;
+    }
