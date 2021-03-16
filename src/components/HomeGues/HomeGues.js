@@ -1,7 +1,7 @@
 
-import '../App.css';
+import './HomeGues.css';
 
-function Home() {
+function HomeGues() {
     return (
         <div className="main">
             <h1>Barber online appointment</h1>
@@ -16,4 +16,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default HomeGues;

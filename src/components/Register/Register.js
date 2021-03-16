@@ -1,5 +1,6 @@
 import { Component } from 'react';
-import Form from './Form/Form'
+import Form from '../Form/Form'
+import './Register.css'
 
 class Register extends Component {
     constructor(props) {
@@ -8,7 +9,7 @@ class Register extends Component {
 
     render() {
         return (
-            <div className='wrapper'>
+            <div className='register-wrapper'>
                 <h3>Register</h3>
                 <Form />
             </div>

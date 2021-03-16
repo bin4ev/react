@@ -28,6 +28,10 @@ function Nav() {
                         <li>About</li>
                     </Link>
 
+                    <Link to='/'>
+                        <li>Logout</li>
+                    </Link>
+
                 </ul>
             </nav>
 

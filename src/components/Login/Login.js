@@ -8,7 +8,7 @@ class Login extends Component {
 
     render() {
         return (
-            <div className='wrapper'>
+            <div className='login-wrapper'>
                 <h3>Login</h3>
                 <Form />
             </div>
