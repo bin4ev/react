@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import Form from '../Form/Form'
+import Form from './Form/Form'
 import './Register.css'
 
 class Register extends Component {
