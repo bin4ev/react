@@ -1,5 +1,5 @@
 import { Component } from 'react';
-/* import Form from '../Form/Form' */
+import LoginForm from './LoginForm/LoginForm'
 import './Login.css'
 class Login extends Component {
     constructor(props) {
@@ -10,7 +10,7 @@ class Login extends Component {
         return (
             <div className='login-wrapper'>
                 <h3>Login</h3>
-               {/*  <Form /> */}
+              <LoginForm/>
             </div>
 
         )

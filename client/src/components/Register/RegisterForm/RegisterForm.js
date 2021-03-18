@@ -1,11 +1,11 @@
 import { Component } from 'react';
 import { withRouter } from 'react-router-dom'
-import './Form.css';
+import './RegisterForm.css';
 import api from '../../../services/api';
 
 
 
-class Form extends Component {
+class RegisterForm extends Component {
 
     constructor(props) {
         super(props);
@@ -45,4 +45,4 @@ class Form extends Component {
     }
 
 }
-export default withRouter(Form);
+export default withRouter(RegisterForm);

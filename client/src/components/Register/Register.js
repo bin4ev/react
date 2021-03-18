@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import Form from './Form/Form'
+import RegisterForm from './RegisterForm/RegisterForm'
 import './Register.css'
 
 class Register extends Component {
@@ -11,7 +11,7 @@ class Register extends Component {
         return (
             <div className='register-wrapper'>
                 <h3>Register</h3>
-                <Form />
+                <RegisterForm />
             </div>
 
         )
