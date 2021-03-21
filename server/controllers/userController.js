@@ -6,13 +6,14 @@ router.post('/register', (req, res) => {
     //validate passwords
     userService.createUser(username, password)
         .then(user =>
-            res.send(user))
+            res.json(user))
         .catch(err => console.log(err))
 })
+
 router.post('/login', (req, res) => {
     const { username, password } = req.body;
     userService.login(username, password)
-        .then(token => res.send(token))
+        .then(token => res.json(token))
         .catch(err => console.log(err))
 })
 module.exports = router;

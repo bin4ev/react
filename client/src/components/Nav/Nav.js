@@ -9,6 +9,9 @@ function Nav() {
             <nav>
                 <Link to='/'>
                     <h3 className='logo'>Home</h3>
+                    <Link to='/homePage'>
+                    <h3 className='logo'>Home Page</h3>
+                    </Link>
                 </Link>
 
                 <ul className='nav-links'>

@@ -1,0 +1,26 @@
+.working-hour span{
+    float: right;
+    margin-right: 30px;
+}
+
+.working-hour{
+    width: 20%;
+    padding-left: 15px;
+    margin-right:  25px;
+    margin-top: 15px;
+    float: right;
+    font-style: italic;
+    background-color: lightgray;
+    display:table-row;
+    border-radius: 5px;   
+  }
+  .days div{
+      margin: 5px;
+      padding: 5px;
+    
+  }
+  .days h3{
+      text-align: center;
+      text-decoration-line: underline;
+      font-style: italic;
+  }

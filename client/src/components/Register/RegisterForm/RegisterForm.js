@@ -22,7 +22,7 @@ class RegisterForm extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        api.registerUserRequest('http://localhost:5000/user/register', this.state)
+        api.registerUserRequest('/user/register', this.state)
         .then(()=>this.props.history.push('./login'))
         .catch(err=>console.log(err))
         

@@ -1,18 +1,20 @@
-
 import './HomeGues.css';
+import ScheduleTime from './ScheduleTime/ScheduleTime'
+import BookButton from '../BookButton/BookButton';
 
 function HomeGues() {
+  
     return (
-        <div className="main">
-            <h1>Barber online appointment</h1>
-            <div className='text-Wrapper'>
-                <p>A smooth, simple </p>
-                <p>to online appointment booking.</p>
-                <strong>call: 088-XXX_XXX</strong>
+        <>
+            <div className="main" >
+               <ScheduleTime/>
+                <div className='wraper'>
+                    <strong>Book online appointment</strong>
+                 <BookButton/>
+                </div>
             </div>
 
-         
-        </div>
+        </>
     );
 }
 

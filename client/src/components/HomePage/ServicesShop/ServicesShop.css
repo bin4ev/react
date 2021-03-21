@@ -1,0 +1,24 @@
+.services{
+    text-align: center;
+}
+td {
+font-size: 20px;
+padding-left: 350px; 
+width: 200px;;
+border-bottom: 1px solid #ddd;
+}
+.services button{
+  border-radius: 100px;
+  background-color: #b8b4b3;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 10px;
+  padding: 20px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: auto;
+  float: right;
+  margin-right: 10px;
+}
