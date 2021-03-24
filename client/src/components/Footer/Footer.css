@@ -1,10 +1,13 @@
 .footer{
-    background-color:rgba(0,0,0,0.06);
-    font-family: sans-serif;
-    text-align: center;
-    padding: 40px;
-    position: absolute;
-    bottom: 0;
-    width:95%;
-    height: 2.5rem; 
+    background-color:rgba(185, 182, 182, 0.06);
+        text-align: center;
+        position: relative;
+        height: 100px;
+        bottom: 0;
+        width: 100%;
+    
+}
+.footer p {
+    color:whitesmoke;
+    padding:35px;
 }

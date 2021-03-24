@@ -2,24 +2,30 @@ import './StaffMembers.css';
 import { useState, useEffect } from 'react';
 import api from '../../../services/api'
 function StaffMembers() {
-  const [state, useState] = useState();
+  const [barbers, setBarbers] = useState([]);
+
+  function setState(data) {
+    setBarbers((prevState) => prevState = data)
+  }
+
 
   useEffect(() => {
     api.getStaff()
-      .then(data => useState(prevState => { prevState : data }))
+      .then(data => setState(data))
 
 
   })
+
   return (
+
     <div class="row">
-      <div class="column">
-        <h2>Barber 1</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
-      </div>
-      <div class="column">
-        <h2>barber 2</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
-      </div>
+      <h1>Top Barbers Staff</h1>
+      {barbers.map(barber => <div class="column" key={barber._id}>
+        <img src={barber.imageUrl}/>
+        <h2>{barber.name}</h2>
+        <p>{barber.description}</p>
+      </div>)}
+
     </div>
   )
 }

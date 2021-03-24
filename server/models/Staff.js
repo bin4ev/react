@@ -15,6 +15,11 @@ const staffSchema = new mongoose.Schema({
         type: String,
         require: true,
          unique: true,
+    },
+    imageUrl:{
+        type: String,
+        require: true,
+         unique: true,
     }
 
 })

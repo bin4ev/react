@@ -5,12 +5,16 @@ import StaffMembers from './StaffMembers/StaffMembers';
 
 function HomePage() {
   return (
-    <div className='layout'>
-      <div className='main-content'>
-        <h1>Welcome, User to Home Page...</h1>
+    <div className='container'>
+      
+    
+  <div  className='address'>
+    <p>address: Sofia, ul Korab Planina 26, 8600</p>
+  </div>
         <StaffMembers />
-      </div>
+     
       <ServicesShop />
+   
     </div>
 
 

@@ -16,8 +16,8 @@ function registerUserRequest (endPoint,state){
 
 function getStaff(){
     return  fetch(baseUrl+'/staff')
-    .then(res=>res.stringify())
-    .then(data=>console.log(data))
+    .then(res=>res.json())
+    
 
 }
 export default {

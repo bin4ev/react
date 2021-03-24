@@ -18,6 +18,13 @@ function BookForm() {
                     <option value="DryCut">Dry Cut</option>
                     <option value="Beard">Beard</option>
                     </select>
+                    <br/>
+                    <label for="barbers">Barbers</label>
+                    <br/>
+                    <select name= 'barbers'>
+                    <option value="Valentin Dobrev">Valentin Dobrev</option>
+                    <option value="Drago-chaq">Drago-chaq</option>
+                    </select>
                 </div>
                 <input type="submit" value="book" />
             </form>

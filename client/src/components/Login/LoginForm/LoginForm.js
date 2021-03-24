@@ -10,7 +10,6 @@ function LoginForm() {
             <br />
             <input type="text" name="password" placeholder="Password"  />
             <br />
-           
             <br />
             <input type="submit" value="Submit" />
         </form>

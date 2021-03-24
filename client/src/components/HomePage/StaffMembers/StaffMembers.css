@@ -2,6 +2,11 @@
     float: left;
     width: 33.33%;
     padding: 15px;
+    border:solid black;
+    margin:5px;
+    margin-left: 110px;
+    margin-right: 101px;
+    
   }
   
   /* Clear floats after the columns */
@@ -15,3 +20,12 @@
       width: 100%;
     }
   }
+  .row{
+    text-align: center;
+  }
+  .row img{
+    width:150px;
+    border-radius: 50%;
+  }
+
+  

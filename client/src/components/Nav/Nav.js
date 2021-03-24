@@ -1,18 +1,21 @@
 
 import './Nav.css';
 import { Link } from "react-router-dom";
-
+import logo from '../../images/favicon.ico'
 function Nav() {
 
     return (
         <div className="App">
             <nav>
                 <Link to='/'>
-                    <h3 className='logo'>Home</h3>
-                    <Link to='/homePage'>
-                    <h3 className='logo'>Home Page</h3>
-                    </Link>
+                    <h1 className='logo'>
+                        <img src={logo}/>
+                        </h1>
                 </Link>
+                    <Link to='/homePage'>
+                    <h5 className='link'>Home Page</h5>
+                    </Link>
+                
 
                 <ul className='nav-links'>
                     <Link to='/register'> <li>Sign up</li></Link>

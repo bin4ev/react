@@ -1,11 +1,17 @@
 
   .layout{
-      background-image:url('https://previews.123rf.com/images/haveseen/haveseen1704/haveseen170400481/76733642-vintage-barber-shop-tools-on-old-wooden-background.jpg');
+      background-image:url('https://image.freepik.com/free-vector/barber-shop-background-design_1257-24.jpg');
       background-size: 100%;
      background-repeat: no-repeat;
       margin-top: -22px;
       margin-bottom: 0px;
  
   }
+  .address{
+ font-family: sans-serif;
+ font-style: italic;
+padding-top: 5px;
+  }
+
 
 

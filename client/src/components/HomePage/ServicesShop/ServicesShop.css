@@ -1,19 +1,23 @@
 .services{
     text-align: center;
 }
-td {
+td{
+text-rendering: auto;
 font-size: 20px;
 padding-left: 350px; 
 width: 200px;;
 border-bottom: 1px solid #ddd;
+color:slategrey;
 }
+
 .services button{
+ 
   border-radius: 100px;
   background-color: #b8b4b3;
   border: none;
   color: #FFFFFF;
   text-align: center;
-  font-size: 10px;
+  font-size: 12px;
   padding: 20px;
   width: 100px;
   transition: all 0.5s;
@@ -22,3 +26,4 @@ border-bottom: 1px solid #ddd;
   float: right;
   margin-right: 10px;
 }
+
