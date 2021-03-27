@@ -14,10 +14,12 @@ function Nav() {
                 </Link>
                     <Link to='/homePage'>
                     <h5 className='link'>Home Page</h5>
+                   
                     </Link>
                 
 
                 <ul className='nav-links'>
+                     <Link to='/addImage'> <p>Add Image to Galery</p></Link>
                     <Link to='/register'> <li>Sign up</li></Link>
                     <Link to='/login'> <li>Log in</li> </Link>
                     <Link to='/contacts'> <li>Contacts</li>

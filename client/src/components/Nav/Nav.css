@@ -9,17 +9,17 @@ nav {
     font-style: oblique;
 
     }
-    .nav-links {
+    .nav-links{
     
-     margin-right: 50px;
+     margin-right: 40px;
       margin-left: auto;
       cursor: pointer;
-      width: 30%;
+      width: 40%;
       justify-content: space-around;
-      display: flex;
-      text-align: center;
+      display:flex;
+      text-align:justify;
       list-style: none;
-     
+    
       
       
     }
@@ -37,5 +37,6 @@ nav {
       border:solid 2px
 
     }
+ 
 
  

@@ -1,10 +1,7 @@
-.image-gallery img{
-width: 300px;
-height: auto;
-margin: 30px;
-
+.image-style{
+    width: 400px
 }
-.image-gallery{
-    display: inline-block;
- 
+.container{
+    margin: 30px;
+    margin-left: 10px;
 }

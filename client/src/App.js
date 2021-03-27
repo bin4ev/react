@@ -9,6 +9,7 @@ import Register from './components/Register/Register';
 import Footer from './components/Footer/Footer';
 import HomePage from './components/HomePage/HomePage';
 import BookForm from './components/HomeGues/BookForm/BookForm';
+import AddImage from './components/AddImage/AddImage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path='/login' component={Login} />
             <Route path='/register' component={Register} />
             <Route path='/logout' component={HomeGues} />
+            <Route path='/addImage'component={AddImage} />
           </Switch>
     <Footer/>
     </>
