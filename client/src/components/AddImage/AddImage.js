@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import { Button } from 'reactstrap';
 import api from '../../services/api';
+import './AddImage.css';
 
 const AddImage = ({
     history,
@@ -27,14 +28,21 @@ const AddImage = ({
 
       
         return (
-
+            <>
+           
             <form className='form' onSubmit={submitHandler}>
-                <h3>Add your Image URL</h3>
+               
+                <div className='form-details'>
+                <h3>-- Add your Image --</h3>
                 <label htmlFor='imageURL'></label>
-                <input type="text" name="imageURL" />
+                <input type="text" name="imageURL" placeholder='add image url'/>
                 <Button className='btn btn-dark'>Submit</Button>
+                </div>
+             
 
             </form>
+            </>
+           
 
         );
 } 

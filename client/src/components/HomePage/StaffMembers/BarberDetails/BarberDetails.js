@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 
 import './BarberDetails.css'
 import api from '../../../../services/api';
-import AddBarberPage from '../AddBarberPage/AddBarberPage';
+
 
 const BarberDetails = ({
     match,
@@ -20,11 +20,14 @@ const BarberDetails = ({
 
 
     return (
+
         <div className='card-details'>
+               
                 <img src={barber.imageUrl} />
                 <div className='card-text'>
                 <h2>{barber.name}</h2>
                 <p>{barber.description}</p>
+           
                 <Link to ={`/barber/edit/${barber._id}`}><Button style={{ marginRight: 20 }}>Edit</Button></Link>
                 <Button>Delete</Button>
                 </div>

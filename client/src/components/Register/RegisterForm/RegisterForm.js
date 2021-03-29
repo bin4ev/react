@@ -31,6 +31,7 @@ class RegisterForm extends Component {
     render() {
         return (
                 <div className='form'>
+                    <div className='form-data'>
                     <form onSubmit={this.handleSubmit}  >
                         <input type="text" name="username" placeholder='Username' onChange={this.handleChange} />
                         <br />
@@ -40,6 +41,9 @@ class RegisterForm extends Component {
                         <br />
                         <input type="submit" value="Submit" />
                     </form>
+
+                    </div>
+                  
                 </div >
         )
     }

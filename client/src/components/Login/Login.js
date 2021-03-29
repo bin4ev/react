@@ -9,7 +9,7 @@ class Login extends Component {
     render() {
         return (
             <div className='login-wrapper'>
-                <h3>Login</h3>
+                <h4>Login</h4>
               <LoginForm/>
             </div>
 

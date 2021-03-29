@@ -22,7 +22,7 @@ function StaffMembers() {
         <h1>Top Barbers Staff</h1>
         {barbers.map(barber =>
           <div class="column" key={barber._id}>
-            <Link to={`/barber/${barber._id}`}><img src={barber.imageUrl} /></Link>
+            <Link to={`/barber/${barber._id}`}><img src={barber.imageUrl} alt='photo'/></Link>
               <h2>{barber.name}</h2>
               <p>{barber.description}</p>
           </div>)}

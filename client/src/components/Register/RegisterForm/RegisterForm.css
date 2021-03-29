@@ -1,15 +1,22 @@
 .form input{
-    margin: 10px;
+    margin: 15px;
     padding:10px;
     border:0;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
-    width: 25%;
-    border-radius: 10%;
+    width: 55%;
+   
     font-family:inherit;
     font-size: inherit;
-
-    
-  
- 
-  
   }
+  .form{
+    margin-top:50px;
+    margin-left: 540px;
+    width: 450px;
+    height: 400px;
+    border:solid;
+    border-color: white;
+  }
+  .form-data{
+    margin-top: 50px;
+  }
+  

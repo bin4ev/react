@@ -5,23 +5,20 @@ nav {
     align-items: center;
     min-height: 10vh;
     background-color:black;
-    text-decoration-color: white;
+  color: white;
     font-style: oblique;
 
     }
-    .nav-links{
+    .nav-link{
     
      margin-right: 40px;
       margin-left: auto;
-      cursor: pointer;
+      
       width: 40%;
       justify-content: space-around;
       display:flex;
       text-align:justify;
       list-style: none;
-    
-      
-      
     }
     .link {
     margin-left: 100px;
