@@ -1,8 +1,8 @@
 const baseUrl ='http://localhost:5000'
 
 
-function registerUserRequest (endPoint,state){
-   return fetch(baseUrl+endPoint, {
+function registerUserRequest (state){
+   return fetch(baseUrl+'/user/register', {
 
         method: 'POST',
 
@@ -17,14 +17,13 @@ function registerUserRequest (endPoint,state){
 }
 
 function getStaff(){
-    return  fetch(baseUrl+'/staff')
+    return  fetch(baseUrl+'/staff/all')
     .then(res=>res.json())
     
-
 }
 
 function addImage(imageURL) {
-    return fetch(baseUrl+'/imageGalery/addImage',
+    return fetch(baseUrl+'/imageGallery/addImage',
     {
 
         method: 'POST',
@@ -39,8 +38,35 @@ function addImage(imageURL) {
       
 
 }
+function getAllImages() {
+    return fetch(baseUrl+'/imageGallery/getAllImages')
+    .then(res=>res.json())
+    
+}
+
+function addBarber(barber) {
+
+   return fetch(baseUrl+'/staff/addBarber',{
+    method: 'POST',
+
+    headers: {
+        'Content-Type': 'application/json',
+    },
+
+    body: JSON.stringify(barber),
+   })
+}
+function getOne({id}) {
+
+    return fetch(baseUrl+`/staff/barber/${id}`)
+    .then(res=>res.json());
+}
 export default {
     registerUserRequest,
     getStaff,
+    getAllImages,
     addImage,
+    addBarber,
+    getOne,
+
 }

@@ -1,3 +1,4 @@
+import { Button } from "reactstrap";
 
 
 
@@ -10,8 +11,8 @@ function LoginForm() {
             <br />
             <input type="text" name="password" placeholder="Password"  />
             <br />
-            <br />
-            <input type="submit" value="Submit" />
+       
+            <Button>Submit</Button> 
         </form>
     </div >
     );

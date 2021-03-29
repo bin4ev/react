@@ -1,11 +1,11 @@
 .column {
     float: left;
-    width: 33.33%;
+    width: 15%;
     padding: 15px;
     border:solid black;
-    margin:5px;
+    margin:15px;
     margin-left: 110px;
-    margin-right: 101px;
+
     
   }
   

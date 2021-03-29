@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from 'react'
+import { Button } from 'reactstrap';
 import api from '../../services/api';
 
 const AddImage = ({
@@ -31,7 +32,7 @@ const AddImage = ({
                 <h3>Add your Image URL</h3>
                 <label htmlFor='imageURL'></label>
                 <input type="text" name="imageURL" />
-                <input type='submit'></input>
+                <Button className='btn btn-dark'>Submit</Button>
 
             </form>
 

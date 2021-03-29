@@ -1,0 +1,24 @@
+.card-details{
+ padding-top: 80px;
+width: 350px;
+height: 700px;
+border:solid black;
+margin:15px;
+color:black;
+margin-left: 550px;
+background: black;
+
+
+
+}
+.card-details img{
+    width: 80%;
+    margin-left:30px ;
+    margin-bottom: 50px;
+
+}
+.card-text{
+    padding-left: 100px;
+    color:white
+ 
+}

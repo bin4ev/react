@@ -6,7 +6,7 @@ const AddImageSchema = new mongoose.Schema({
     id: mongoose.Types.ObjectId,
 
 
-    imageUrl:{
+    src:{
         type: String,
         require: true,
      
