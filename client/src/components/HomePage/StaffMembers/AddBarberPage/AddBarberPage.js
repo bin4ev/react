@@ -1,20 +1,16 @@
 import { useState, useEffect } from 'react';
+import Form  from '../Form/Form';
 import api from '../../../../services/api';
 import './AddNewBarberPage.css'
+
 const AddBarberPage = ({
     history,
 }) => {
     const [barber, setBarber] = useState('')
 
-    const submitHandler = (e) => {
-        e.preventDefault();
-
-        setBarber({
-            name: e.target.name.value,
-            description: e.target.description.value,
-            imageUrl: e.target.imageUrl.value,
-        })
-
+    const submitHandler = (barber) => {
+      
+      
     }
 
     useEffect(() => {
@@ -30,23 +26,11 @@ const AddBarberPage = ({
     return (
         <div className='wrapper'>
         <h4 className='head'>Add new Barber</h4>
-        <div className='form'>
-              <div className='form-data'>
-                  <form onSubmit={submitHandler}>
-                   <input type='text' name='name' placeholder='Name'></input>
-                    <br />
-                  <input type='text' name='description' placeholder='Description'></input>
-                  <br />
-                  <input type='text' name='imageUrl' placeholder='imageUrl'></input>
-                  <br />
-                  <button className='btn btn-dark'>Submit</button>
-                  </form>
-              </div>
+            <Form 
+            submit={submitHandler} 
+            setBarberValue={submitHandler}
+            />
           </div>
-        </div>
-            
-    
-
     );
 }
 

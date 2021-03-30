@@ -4,9 +4,10 @@ function BookForm() {
 
     return (
         <div className='book-wrapper'>
+              <h4>Please book your appointment</h4>
             <form className='form'>
                 <div >
-                    <h4>Please book your appointment</h4>
+                  
                     <input type="text" name="name" placeholder='Enter your name:' />
                     <br />
                     <input type="tel" id="phone" name="phone" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}" placeholder='Enter your phone number:' />

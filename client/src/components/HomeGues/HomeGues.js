@@ -7,16 +7,17 @@ function HomeGues() {
 
     return (
         <>
-            <div className="container" >
-                <ScheduleTime />
+          <ScheduleTime />
+        
                 <div className='wraper'>
-                    <strong>Book online appointment</strong>
-                    <BookButton />
+                  <div className='head'>
+                <h4>Book your appointment now</h4>
+                  </div>
+                  <BookButton />
+                  <ImageGallery/>
                 </div>
-                <div className='container'>
-                 <ImageGallery/>
-                </div>
-            </div>
+                
+        
         </>
     );
 }

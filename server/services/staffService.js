@@ -28,9 +28,19 @@ const getOne = async (barberId)=>{
 
 return barberData;
 }
+const edit = async ( _id,name,description,imageUrl)=>{
+    let result = await Staff.findByIdAndUpdate(_id,{name,description,imageUrl})
+    return result
+}
+const deleteBarber = async (id)=>{
+    let result = await Staff.findByIdAndRemove(id);
+    return result
+}
 
 module.exports = {
     getStaff,
     addBarber,
     getOne,
+    edit,
+    deleteBarber,
 }

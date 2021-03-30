@@ -14,10 +14,7 @@ function Nav() {
                 </Link>
                     <Link to='/homePage'>
                     <h5 className='link'>Home Page</h5>
-                   
                     </Link>
-                
-
                 <ul className='nav-link'>
                 
                      <Link to='/addImage'> <p>Add Image to Gallery</p></Link>

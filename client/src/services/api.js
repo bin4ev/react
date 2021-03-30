@@ -61,6 +61,22 @@ function getOne({id}) {
     return fetch(baseUrl+`/staff/barber/${id}`)
     .then(res=>res.json());
 }
+function edit(barber) {
+    return fetch(baseUrl+`/staff/barber/edit`,{
+        method: 'POST',
+    
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    
+        body: JSON.stringify(barber),
+       })
+}
+
+function deleteBarber(_id){
+    return fetch(baseUrl+`/staff/barber/delete/${_id}`)
+   
+}
 export default {
     registerUserRequest,
     getStaff,
@@ -68,5 +84,7 @@ export default {
     addImage,
     addBarber,
     getOne,
+    edit,
+    deleteBarber,
 
 }

@@ -12,6 +12,8 @@ import BookForm from './components/HomeGues/BookForm/BookForm';
 import AddImage from './components/AddImage/AddImage';
 import AddBarberPage from './components/HomePage/StaffMembers/AddBarberPage/AddBarberPage';
 import BarberDetails from './components/HomePage/StaffMembers/BarberDetails/BarberDetails';
+import EditBarber from './components/HomePage/StaffMembers/EditBarber/EditBarber';
+import DeleteStaff from './components/HomePage/StaffMembers/DeleteStaff/DeleteStaff';
 
 function App() {
   return (
@@ -28,8 +30,9 @@ function App() {
             <Route path='/logout' component={HomeGues} />
             <Route path='/addImage'component={AddImage} />
             <Route path='/addBarber'component={AddBarberPage} />
-            <Route path='/barber/:id'component={BarberDetails} />
-          
+            <Route path='/barber/:id' exact component={BarberDetails} />
+            <Route path='/barber/edit/:id'component={EditBarber} />
+            <Route path='/barber/delete/:id'component={DeleteStaff} />
           </Switch>
     <Footer/>
     </>
