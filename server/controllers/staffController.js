@@ -10,6 +10,7 @@ router.get('/all', (req, res) => {
 })
 
 router.post('/addBarber', (req, res) => {
+  
     const { name, description, imageUrl } = req.body;
 
     staffService.addBarber({
@@ -17,7 +18,7 @@ router.post('/addBarber', (req, res) => {
         description,
         imageUrl
     })
-        .then(barber => res.send('barber is save!'))
+        .then(barber => res.send(barber))
         .catch(err => console.log(err))
 })
 
