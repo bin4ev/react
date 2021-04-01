@@ -4,8 +4,8 @@ import { Button } from 'reactstrap';
 import { useState, useEffect } from 'react'
 
 import './BarberDetails.css'
-import api from '../../../../services/api';
-import DeleteStaff from '../DeleteStaff/DeleteStaff.js'
+import api from '../../../../services/apiStaff';
+
 
 const BarberDetails = ({
     match,
@@ -25,7 +25,7 @@ const BarberDetails = ({
 
         <div className='card-details'>
 
-            <img src={barber.imageUrl} />
+            <img src={barber.imageUrl} alt='barber image'/>
             <div className='card-text'>
                 <h2>{barber.name}</h2>
                 <p>{barber.description}</p>

@@ -7,13 +7,13 @@ router.post('/register', (req, res) => {
     userService.createUser(username, password)
         .then(user =>
             res.json(user))
-        .catch(err => console.log(err))
+        .catch(err =>res.sent(err))
 })
 
 router.post('/login', (req, res) => {
     const { username, password } = req.body;
     userService.login(username, password)
         .then(token => res.json(token))
-        .catch(err => console.log(err))
+        .catch(err => res.send(err))
 })
 module.exports = router;

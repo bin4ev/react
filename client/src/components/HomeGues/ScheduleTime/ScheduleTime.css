@@ -13,7 +13,7 @@
     font-style: italic;
     background-color: lightgray;
     display:table-row;
-    /* border-radius: 5px;  */  
+   opacity: 0.5; 
   }
   .days div{
       margin: 5px;

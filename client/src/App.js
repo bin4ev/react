@@ -8,7 +8,7 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Footer from './components/Footer/Footer';
 import HomePage from './components/HomePage/HomePage';
-import BookForm from './components/HomeGues/BookForm/BookForm';
+import BookForm from './components/HomeGues/AppointmentForm/AppointmentForm';
 import AddImage from './components/AddImage/AddImage';
 import AddBarberPage from './components/HomePage/StaffMembers/AddBarberPage/AddBarberPage';
 import BarberDetails from './components/HomePage/StaffMembers/BarberDetails/BarberDetails';

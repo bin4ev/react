@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const imageService = require('../services/ImageService')
+const imageService = require('../../services/imageService')
 
 router.post('/addImage', (req, res) => {
    const urlImage=req.body.imageURL;

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-const staffSchema = new mongoose.Schema({
+const appointmentSchema = new mongoose.Schema({
 
     id: mongoose.Types.ObjectId,
 
@@ -11,12 +11,17 @@ const staffSchema = new mongoose.Schema({
         unique: true,
     },
 
-    description: {
+    phone: {
+        type: Number,
+        require: true,
+         unique: true,
+    },
+    service:{
         type: String,
         require: true,
-        unique: true,
+         unique: true,
     },
-    imageUrl:{
+    barber:{
         type: String,
         require: true,
          unique: true,
@@ -26,4 +31,4 @@ const staffSchema = new mongoose.Schema({
 
 
 
-module.exports = mongoose.model('Staff', staffSchema)
+module.exports = mongoose.model('Appointment', appointmentSchema)

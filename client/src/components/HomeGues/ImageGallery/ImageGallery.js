@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 import './ImageGallery.css';
 
-import api from '../../../services/api';
+import apiGallery from '../../../services/apiGallery';
 
 
 
@@ -12,7 +12,7 @@ const ImageGallery = () => {
     const [images, SetImages] = useState([]);
 
 useEffect(()=>{
-    api.getAllImages()
+    apiGallery.getAllImages()
     .then(dataImages=>SetImages(dataImages))
     .catch(err=> console.log(err))
 },[])

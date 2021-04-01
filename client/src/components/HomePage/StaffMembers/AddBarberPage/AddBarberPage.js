@@ -1,6 +1,6 @@
 import { useState, } from 'react';
 import Form  from '../Form/Form';
-import api from '../../../../services/api';
+import api from '../../../../services/apiStaff';
 import './AddNewBarberPage.css'
 
 const AddBarberPage = ({

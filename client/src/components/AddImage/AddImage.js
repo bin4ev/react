@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react'
 import { Button } from 'reactstrap';
-import api from '../../services/api';
+import apiGallery from '../../services/apiGallery';
 import './AddImage.css';
 
 const AddImage = ({
@@ -21,7 +21,7 @@ const AddImage = ({
         if(!image){
             return
         }
-        api.addImage(image)
+        apiGallery.addImage(image)
         .then(res=>history.push('/'))
         .catch(err=>console.log(err))
     })

@@ -1,52 +1,43 @@
-import { Component } from 'react';
-import { withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { Button } from "reactstrap";
+
 import './RegisterForm.css';
-import api from '../../../services/api';
+import api from '../../../services/apiUsers';
+import schema from '../../validatorsSchema/schema';
 
 
+const RegisterForm = ({
+    history
+}) => {
 
-class RegisterForm extends Component {
+    const { register, handleSubmit, errors } = useForm({
+        resolver: yupResolver(schema.register)
+    })
 
-    constructor(props) {
-        super(props);
-        this.state ={};
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+    const submitForm = (data) => {
+        api.registerUserRequest(data)
+            .then(() => history.push('./login'))
+            .catch(err => console.log(err))
     }
 
-    handleChange(event) {
-        this.setState({
-            [event.target.name]: event.target.value,
-        })
-    }
+    return (
+        <div className='form'>
+            <div className='form-data'>
 
-    handleSubmit(event) {
-        event.preventDefault();
-        api.registerUserRequest( this.state)
-        .then(()=>this.props.history.push('./login'))
-        .catch(err=>console.log(err))
-        
-    }
-
-    render() {
-        return (
-                <div className='form'>
-                    <div className='form-data'>
-                    <form onSubmit={this.handleSubmit}  >
-                        <input type="text" name="username" placeholder='Username' onChange={this.handleChange} />
-                        <br />
-                        <input type="text" name="password" placeholder="Password" onChange={this.handleChange} />
-                        <br />
-                        <input type="text" name="Repeatpassword" placeholder="Repeat Password" onChange={this.handleChange} />
-                        <br />
-                        <input type="submit" value="Submit" />
-                    </form>
-
-                    </div>
-                  
-                </div >
-        )
-    }
+                <form onSubmit={handleSubmit(submitForm)}  >
+                    <input type="text" name="username" placeholder='Username' ref={register} />
+                    <p>{errors.username?.message}</p>
+                    <input type="password" name="password" placeholder="Password" ref={register} />
+                    <p>{errors.password?.message}</p>
+                    <input type="password" name="repeatPassword" placeholder="repeat Password" ref={register} />
+                    <p>{errors.repeatPassword && 'Passwords not match!'}</p>
+                    <Button>Submit</Button>
+                </form>
+            </div>
+        </div >
+    )
 
 }
 export default withRouter(RegisterForm);

@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { json } = require('express');
 const staffService = require('../services/staffService')
 
 router.get('/all', (req, res) => {
