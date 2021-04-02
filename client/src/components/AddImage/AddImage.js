@@ -6,9 +6,10 @@ import './AddImage.css';
 
 const AddImage = ({
     history,
+    token,
 }) => {
     const [image, setImage] = useState('')
-        console.log(image);
+     
 
     const submitHandler = (e) => {
         e.preventDefault()
@@ -21,7 +22,7 @@ const AddImage = ({
         if(!image){
             return
         }
-        apiGallery.addImage(image)
+        apiGallery.addImage(image,token)
         .then(res=>history.push('/'))
         .catch(err=>console.log(err))
     })

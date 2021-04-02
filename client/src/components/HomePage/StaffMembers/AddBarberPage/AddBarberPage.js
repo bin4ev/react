@@ -1,14 +1,15 @@
 import { useState, } from 'react';
-import Form  from '../Form/Form';
+import Form from '../Form/Form';
 import api from '../../../../services/apiStaff';
-import './AddNewBarberPage.css'
+import './AddBarberPage.css'
 
 const AddBarberPage = ({
     history,
+   
 }) => {
     const [barber, setBarber] = useState('')
 
-    function submitHandler(e){
+    function submitHandler(e) {
         e.preventDefault();
         if (!barber) {
             return
@@ -18,15 +19,17 @@ const AddBarberPage = ({
             .then((res) => history.push('/homePage'))
             .catch(err => console.log(err))
     }
-
+   
     return (
-        <div className='wrapper'>
+         <div className='wrapper'>
         <h4 className='head'>Add new Barber</h4>
-            <Form 
-            submit={submitHandler} 
+        <Form
+            submit={submitHandler}
             setBarberValue={setBarber}
-            />
-          </div>
+        />
+    </div>
+
+        
     );
 }
 

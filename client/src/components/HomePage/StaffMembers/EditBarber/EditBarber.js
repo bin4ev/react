@@ -6,11 +6,12 @@ import Form from '../Form/Form'
 const EditBarber = ({
     match,
     history,
+    token,
 }) => {
     const [barber, setBarber] = useState({})
 
     useEffect(() => {
-        api.getOne(match.params)
+        api.getOne(match.params,token)
             .then(data => setBarber(data))
             .catch(err => console.log(err))
     }, [match])
@@ -28,7 +29,7 @@ const EditBarber = ({
         <div className='wrapper'>
             <h4 className='head'>Edit Barber</h4>
 
-            <Form submit={fetchEdit}
+            <Form  submit={fetchEdit}
                 setBarberValue={setBarber}
                 name={barber.name}
                 description={barber.description}

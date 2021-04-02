@@ -3,8 +3,8 @@ const Form = ({
     submit,
     name,
     description,
-    imageUrl
-    
+    imageUrl,
+   
 }) => {
     return (
         <div className='form'>

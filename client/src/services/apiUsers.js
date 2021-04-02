@@ -13,7 +13,8 @@ const registerUserRequest= (state)=>{
         body: JSON.stringify(state),
     })
         .then(response => response.json())
-      
+        .catch(err=>console.log(err))
+
 }
 const loginUser = (data) => {
 
@@ -26,7 +27,8 @@ const loginUser = (data) => {
           body: JSON.stringify(data),
           })
               .then(res => res.json())
-              
+              .catch(err=>console.log(err))
+
       }
       
   

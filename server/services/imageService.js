@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 
 const Image= require('../models/Image');
 
-const addImage = async (urlImage)=>{
-let image =  await  new Image({src:urlImage});
+const addImage = async (urlImage, userId)=>{
+let image =  await  new Image({src:urlImage,user:userId});
 
 return image.save();
 

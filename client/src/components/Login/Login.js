@@ -1,19 +1,18 @@
-import { Component } from 'react';
+
 import LoginForm from './LoginForm/LoginForm'
 import './Login.css'
-class Login extends Component {
-    constructor(props) {
-        super(props)
-    }
+const Login=({
+    setToken,
+})=> {
 
-    render() {
         return (
             <div className='login-wrapper'>
                 <h4>Login</h4>
-              <LoginForm/>
+              <LoginForm setToken={setToken}/>
             </div>
 
         )
-    }
+    
 }
 export default Login
+

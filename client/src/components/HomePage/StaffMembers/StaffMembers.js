@@ -6,7 +6,9 @@ import constants from '../../../constants/constants'
 import stylesStaff from './stylesStaff';
 import useGetAllStaff from '../../../hook/useFethtAllStaff';
 
-function StaffMembers() {
+function StaffMembers({
+  token,
+}) {
 
   const [allStaff] = useGetAllStaff(constants.baseUrl+'/staff/all')
   return (
@@ -14,7 +16,8 @@ function StaffMembers() {
 
         <h1 className="display-4">Top Barbers Staff</h1>
         <hr className="my-4" />
-        <Link to='/addBarber'><Button color="secondary">Add new Barber</Button></Link>
+        {token&&<Link to='/addBarber'><Button color="secondary">Add new Barber</Button></Link>}
+
         <div className= 'container'>
         {allStaff.map(barber =>
           <div key={barber._id}>

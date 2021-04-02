@@ -1,10 +1,9 @@
 const router = require('express').Router();
 const staffService = require('../services/staffService')
-
+const isAuth= require('../middlewares/isAuth')
 router.get('/all', (req, res) => {
     staffService.getStaff()
-        .then(staff => JSON.stringify(staff))
-        .then(data => res.send(data))
+        .then(data => res.json(data))
         .catch(err => console.log(err))
 })
 
@@ -18,7 +17,7 @@ router.post('/addBarber', (req, res) => {
         imageUrl
     })
         .then(barber => res.send(barber))
-        .catch(err => console.log(err))
+        .catch(err =>console.log(err))
 })
 
 router.get('/barber/:id', (req, res) => {
@@ -30,7 +29,7 @@ router.get('/barber/:id', (req, res) => {
         .catch(err => console.log(err))
 })
 
-router.post('/barber/edit', (req, res) => {
+router.post('/barber/edit', isAuth, (req, res) => {
 
     const {_id, name, description, imageUrl } = req.body;
 

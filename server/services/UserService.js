@@ -19,8 +19,14 @@ const login = async (username, password) => {
     if (!isMuch) {
         throw new mongoose.Error('invalid data !')
     }
-    let token = jwt.sign({ _id: user._id, username: user.username }, SECRET);
-    return token
+    if(user.username==='Valentin'&& user.password==='asdasd'){
+        let token = jwt.sign({ _id: user._id, username: user.username,role:'admin'}, SECRET);
+        return token
+    }else{
+        let token = jwt.sign({ _id: user._id, username: user.username,role:'user' }, SECRET);
+        return token
+    }
+  
 
 }
 

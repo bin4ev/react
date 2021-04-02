@@ -8,7 +8,9 @@ import apiGallery from '../../../services/apiGallery';
 
 
 
-const ImageGallery = () => {
+const ImageGallery = ({
+    token,
+}) => {
     const [images, SetImages] = useState([]);
 
 useEffect(()=>{

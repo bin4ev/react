@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const { ROUND_SALT } = require('../config/config');
 const bcrypt = require('bcrypt');
 
@@ -16,7 +17,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         require: true,
          unique: true,
-    }
+    },
+    myImages:[]
+        
+    
 
 })
 

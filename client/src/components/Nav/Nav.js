@@ -2,39 +2,48 @@
 
 import { Link } from "react-router-dom";
 import logo from '../../assets/favicon.ico'
-function Nav() {
-
+function Nav({
+    token,
+}) {
+console.log(token);
     return (
         <>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
 
 
-                <Link to='/'class="navbar-brand">
-                        <img src={logo} className='logo' width="90" height="60"alt='logo' />
+                <Link to='/' className="navbar-brand">
+                    <img src={logo} className='logo' width="90" height="60" alt='logo' />
                 </Link>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <Link to='/homePage' class="nav-link" >Home <span class="sr-only">(current)</span></Link>
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav mr-auto">
+                    <li className="nav-item active">
+                            <Link to='/homePage' className="nav-link" >Home <span className="sr-only">(current)</span></Link>
                         </li>
-                        <Link to='/addImage' > <li class="nav-link mr-5">Add Image to Gallery</li></Link>
-                     
+                        {token ?
+                        
+                            <Link to='/addImage' > <li className="nav-link mr-5">Add Image to Gallery</li></Link>
+                            : null}
                     </ul>
-                    <ul class="navbar-nav mr-20">
-                            <li class="nav-item ">
-                            <Link to='/register'class="nav-link" > <li>Sign up</li></Link>
-                            </li>
-                            <Link to='/login'class="nav-link" > <li>Log in</li> </Link>
-                            <Link to='/contacts'class="nav-link" > <li>Contacts</li>
-                            </Link>
-                             <Link to='/about'class="nav-link" ><li>About</li></Link>
-                            <Link to='/'class="nav-link" > <li>Logout</li> </Link>
-                         </ul>
+                    <ul className="navbar-nav mr-20">
+                        {!token ?
+                         <>
+                          <Link to='/register' className="nav-link" > <li>Register</li></Link> 
+                            <Link to='/login' className="nav-link" > <li>Log in</li> </Link>
+                            <Link to='/contacts' className="nav-link" > <li>Contacts</li></Link>
+                            <Link to='/about' className="nav-link" ><li>About</li></Link></>
+                        :
+                        <>
+                        <li className='nav-link'>Welcome, <strong>{token.username.toUpperCase()}</strong></li>
+                         <Link to='/contacts' className="nav-link" > <li>Contacts</li></Link>
+                         <Link to='/about' className="nav-link" ><li>About</li></Link>
+                        <Link to='/logout' className="nav-link" > <li>Logout</li> </Link>
+                            </>}
+                    </ul>
 
                 </div>
             </nav>
-           
+
         </>
 
 

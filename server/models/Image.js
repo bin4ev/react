@@ -10,7 +10,14 @@ const AddImageSchema = new mongoose.Schema({
         type: String,
         require: true,
      
-    }
+    },
+    user: {
+
+        type: mongoose.Types.ObjectId,
+        ref:'User',
+        required:true,
+        
+    },
 
 })
 

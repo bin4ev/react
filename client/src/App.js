@@ -1,4 +1,5 @@
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch ,Redirect} from 'react-router-dom';
+import {useState} from'react';
 
 import About from './components/About/About';
 import Contacts from './components/Contacts/Contacts';
@@ -15,24 +16,33 @@ import BarberDetails from './components/HomePage/StaffMembers/BarberDetails/Barb
 import EditBarber from './components/HomePage/StaffMembers/EditBarber/EditBarber';
 import DeleteStaff from './components/HomePage/StaffMembers/DeleteStaff/DeleteStaff';
 
+
 function App() {
+
+const [token,setToken] =useState(null)
+
+
+ 
   return (
     <>
-      <Nav />
+      <Nav token = {token}/>
           <Switch>
-          <Route path='/homePage'component={HomePage} />
-            <Route path='/' exact component={HomeGues} />
-            <Route path='/homeGues/book' exact component={BookForm} />
-            <Route path='/about' component={About} />
-            <Route path='/contacts' component={Contacts} />
-            <Route path='/login' component={Login} />
-            <Route path='/register' component={Register} />
-            <Route path='/logout' component={HomeGues} />
-            <Route path='/addImage'component={AddImage} />
-            <Route path='/addBarber'component={AddBarberPage} />
-            <Route path='/barber/:id' exact component={BarberDetails} />
-            <Route path='/barber/edit/:id'component={EditBarber} />
-            <Route path='/barber/delete/:id'component={DeleteStaff} />
+          <Route path='/homePage'render={(props)=><HomePage {...props}token={token}/>} />
+            <Route path='/' exact render={(props)=><HomeGues {...props}token={token}/>} />
+            <Route path='/homeGues/book' exact render={(props)=><BookForm token={token}/>} />
+            <Route path='/about' render={(props)=><About {...props}token={token}/>} />
+            <Route path='/contacts' render={(props)=><Contacts{...props} token={token}/>} />
+          <Route path='/login' render={props=><Login {...props}setToken ={setToken}/>}/>
+            <Route path='/register' render={(props)=><Register{...props} token={token}/>} />
+            <Route path='/logout' render={props=>{
+              setToken(null)
+                return <Redirect to ='/'/>
+            }}/>
+            <Route path='/addImage'render={(props)=><AddImage {...props}token={token}/>} />
+            <Route path='/addBarber'render={(props)=><AddBarberPage{...props} token={token}/>} />
+            <Route path='/barber/:id' exact render={(props)=><BarberDetails {...props}  token={token}/>} />
+            <Route path='/barber/edit/:id'render={(props)=><EditBarber {...props} token={token}/>} />
+            <Route path='/barber/delete/:id'render={(props)=><DeleteStaff {...props}token={token}/>} />
           </Switch>
     <Footer/>
     </>

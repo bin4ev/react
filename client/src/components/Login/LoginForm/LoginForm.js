@@ -1,11 +1,14 @@
 import { Button } from "reactstrap";
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { withRouter } from 'react-router-dom';
 
 import schema from '../../validatorsSchema/schema';
 import api from '../../../services/apiUsers';
-import { withRouter } from 'react-router-dom';
+
+import decodedToken from '../../../utils/decodeToken'
 function LoginForm({
+    setToken,
     history,
 }) {
     const { register, handleSubmit, errors } = useForm({
@@ -16,7 +19,8 @@ function LoginForm({
 const submitForm = (data)=>{
     api.loginUser(data)
     .then(token=>{
-        console.log(token)
+
+        setToken(decodedToken(token))
         history.push('/homePage')
     })
     .catch(err=>console.log(err))

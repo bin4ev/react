@@ -3,7 +3,9 @@ import ScheduleTime from './ScheduleTime/ScheduleTime'
 import BookButton from '../BookButton/BookButton';
 import ImageGallery from './ImageGallery/ImageGallery';
 
-function HomeGues() {
+function HomeGues({
+  token,
+}) {
 
     return (
         <>
