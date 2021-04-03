@@ -8,5 +8,11 @@ router.get('/getAllImages', (req, res) => {
         .then(images =>res.send(images))
         .catch(err => console.log(err))
 })
+router.get('/getFilterImages',(req,res)=>{
+
+    imageService.getFilterImages(req.user._id)
+        .then(images =>res.send(images))
+        .catch(err => console.log(err))
+})
 
 module.exports = router;

@@ -11,6 +11,7 @@ const createUser = (username, password) => {
 }
 
 const login = async (username, password) => {
+
     let user = await User.findOne({username})
     if (!user) {
         throw new mongoose.Error('Invalid Username !')
@@ -19,7 +20,8 @@ const login = async (username, password) => {
     if (!isMuch) {
         throw new mongoose.Error('invalid data !')
     }
-    if(user.username==='Valentin'&& user.password==='asdasd'){
+
+    if(user.username==='Dobrev'){
         let token = jwt.sign({ _id: user._id, username: user.username,role:'admin'}, SECRET);
         return token
     }else{

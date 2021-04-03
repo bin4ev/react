@@ -29,11 +29,11 @@ const BarberDetails = ({
             <div className='card-text'>
                 <h2>{barber.name}</h2>
                 <p>{barber.description}</p>
-                {token.role == 'admin' ?
-                 (<>
+                {token.role=='admin'?
+                 <>
                  <Link to={`/barber/edit/${barber._id}`}><Button style={{ marginRight: 20 }}>Edit</Button></Link>
                     <Link to={`/barber/delete/${barber._id}`}><Button>Delete</Button></Link>
-                    </>)
+                    </>
                      : null}
 
             </div>

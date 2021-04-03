@@ -5,7 +5,7 @@ import './AddBarberPage.css'
 
 const AddBarberPage = ({
     history,
-   
+   token,
 }) => {
     const [barber, setBarber] = useState('')
 
@@ -15,7 +15,7 @@ const AddBarberPage = ({
             return
         }
 
-        api.addBarber(barber)
+        api.addBarber(barber,token)
             .then((res) => history.push('/homePage'))
             .catch(err => console.log(err))
     }

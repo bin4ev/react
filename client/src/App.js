@@ -15,13 +15,14 @@ import AddBarberPage from './components/HomePage/StaffMembers/AddBarberPage/AddB
 import BarberDetails from './components/HomePage/StaffMembers/BarberDetails/BarberDetails';
 import EditBarber from './components/HomePage/StaffMembers/EditBarber/EditBarber';
 import DeleteStaff from './components/HomePage/StaffMembers/DeleteStaff/DeleteStaff';
+import MyHairStylesList from './components/MyHariStylesList/MyHairStylesList';
 
 
 function App() {
 
 const [token,setToken] =useState(null)
 
-
+console.log(token);
  
   return (
     <>
@@ -43,6 +44,7 @@ const [token,setToken] =useState(null)
             <Route path='/barber/:id' exact render={(props)=><BarberDetails {...props}  token={token}/>} />
             <Route path='/barber/edit/:id'render={(props)=><EditBarber {...props} token={token}/>} />
             <Route path='/barber/delete/:id'render={(props)=><DeleteStaff {...props}token={token}/>} />
+            <Route path='/myHairstyles'render={(props)=><MyHairStylesList {...props}token={token}/>} />
           </Switch>
     <Footer/>
     </>

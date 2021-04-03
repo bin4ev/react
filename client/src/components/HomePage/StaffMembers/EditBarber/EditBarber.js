@@ -11,7 +11,7 @@ const EditBarber = ({
     const [barber, setBarber] = useState({})
 
     useEffect(() => {
-        api.getOne(match.params,token)
+        api.getOne(match.params,)
             .then(data => setBarber(data))
             .catch(err => console.log(err))
     }, [match])
@@ -20,7 +20,7 @@ const EditBarber = ({
 
     function fetchEdit(e) {
         e.preventDefault();
-        api.edit(barber)
+        api.edit(barber,token)
             .then(res => history.push('/homePage'))
             .catch(err => console.log(err))
     }

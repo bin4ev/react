@@ -1,11 +1,12 @@
 import  constants from '../constants/constants'
 
-const addBarber=(barber) =>{
+const addBarber=(barber,token) =>{
 
    return fetch(constants.baseUrl+'/staff/addBarber',{
     method: 'POST',
 
     headers: {
+        "Authorization" : `Bearer ${token.jwt}`,
         'Content-Type': 'application/json',
     },
 
@@ -34,8 +35,12 @@ const edit=(barber,token) =>{
        })
 }
 
-const deleteBarber=(_id)=>{
-    return fetch(constants.baseUrl+`/staff/barber/delete/${_id}`)
+const deleteBarber=(_id,token)=>{
+    return fetch(constants.baseUrl+`/staff/barber/delete/${_id}`,{
+        headers:{
+            "Authorization" : `Bearer ${token.jwt}`,
+        }
+    })
     .catch(err=>console.log(err))
 
 }

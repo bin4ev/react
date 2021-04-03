@@ -10,19 +10,21 @@ function StaffMembers({
   token,
 }) {
 
-  const [allStaff] = useGetAllStaff(constants.baseUrl+'/staff/all')
+  const [allStaff] = useGetAllStaff(constants.baseUrl + '/staff/all')
   return (
     <>
 
-        <h1 className="display-4">Top Barbers Staff</h1>
-        <hr className="my-4" />
-        {token&&<Link to='/addBarber'><Button color="secondary">Add new Barber</Button></Link>}
+      <h1 className="display-4">Top Barbers Staff</h1>
+      <hr className="my-4" />
+      {token?.role=='admin' && <Link to='/addBarber'><Button color="secondary">Add new Barber</Button></Link>}
 
-        <div className= 'container'>
+      <div className='container'>
         {allStaff.map(barber =>
           <div key={barber._id}>
+
             <Card style={stylesStaff.cardStyle}>
-              <Link to={`/barber/${barber._id}`}>
+          
+           <Link to={`/barber/${barber._id}`}>
                 <CardImg src={barber.imageUrl} alt="Card image cap" />
               </Link>
               <CardBody>
@@ -31,7 +33,7 @@ function StaffMembers({
               </CardBody>
             </Card>
           </div>)}
-          </div>
+      </div>
 
 
     </>

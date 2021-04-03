@@ -20,6 +20,11 @@ const staffSchema = new mongoose.Schema({
         type: String,
         require: true,
          unique: true,
+    },
+    creator:{
+        type: String,
+        require: true, index:true, unique:true,sparse:true
+       
     }
 
 })

@@ -1,8 +1,8 @@
 import './HomeGues.css';
 import ScheduleTime from './ScheduleTime/ScheduleTime'
-import BookButton from '../BookButton/BookButton';
+import BookButton from '../Button/BookButton';
 import ImageGallery from './ImageGallery/ImageGallery';
-
+import ButtonMyHairStyles from '../Button/ButtonMyHairStyles';
 function HomeGues({
   token,
 }) {
@@ -13,9 +13,11 @@ function HomeGues({
         
                 <div className='wraper'>
                   <div className='head'>
-                <h4>Book your appointment now</h4>
+                  {!token?<h4>Book your appointment now</h4>:null}
+           
                   </div>
-                  <BookButton />
+                  {!token?<BookButton />:<ButtonMyHairStyles/>}
+             
                   <ImageGallery/>
                 </div>
                 

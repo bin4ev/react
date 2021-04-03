@@ -5,7 +5,7 @@ import logo from '../../assets/favicon.ico'
 function Nav({
     token,
 }) {
-console.log(token);
+
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -18,7 +18,7 @@ console.log(token);
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                     <li className="nav-item active">
-                            <Link to='/homePage' className="nav-link" >Home <span className="sr-only">(current)</span></Link>
+                            <Link to='/homePage' className="nav-link" >OUR STAFF AND SERVICE <span className="sr-only">(current)</span></Link>
                         </li>
                         {token ?
                         

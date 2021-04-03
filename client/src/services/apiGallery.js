@@ -25,8 +25,18 @@ const getAllImages=()=> {
     .catch(err=>console.log(err))
 
 }
+const getFilterImages=(token)=>{
+    return fetch(constants.baseUrl+'/imageGallery/getFilterImages',{
+        headers: {
+            "Authorization" : `Bearer ${token.jwt}`,
+            'Content-Type': 'application/json',
+        },
+    })
+    .then(res=>res.json())
+    .catch(err=>console.log(err))
+}
 export default {
-
+    getFilterImages,
     getAllImages,
     addImage,
  
