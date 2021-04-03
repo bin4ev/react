@@ -8,7 +8,7 @@ const appointmentSchema = new mongoose.Schema({
     name: {
         type: String,
         require: true,
-        unique: true,
+        index:true, unique:true,sparse:true
     },
 
     phone: {
@@ -19,12 +19,13 @@ const appointmentSchema = new mongoose.Schema({
     service:{
         type: String,
         require: true,
-         unique: true,
+         
+         index:true, unique:true,sparse:true
     },
     barber:{
         type: String,
         require: true,
-         unique: true,
+        index:true, unique:true,sparse:true
     }
 
 })

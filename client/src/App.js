@@ -16,6 +16,7 @@ import BarberDetails from './components/HomePage/StaffMembers/BarberDetails/Barb
 import EditBarber from './components/HomePage/StaffMembers/EditBarber/EditBarber';
 import DeleteStaff from './components/HomePage/StaffMembers/DeleteStaff/DeleteStaff';
 import MyHairStylesList from './components/MyHariStylesList/MyHairStylesList';
+import HairstylesDetails from './components/MyHariStylesList/HairstylesDetails';
 
 
 function App() {
@@ -44,7 +45,8 @@ console.log(token);
             <Route path='/barber/:id' exact render={(props)=><BarberDetails {...props}  token={token}/>} />
             <Route path='/barber/edit/:id'render={(props)=><EditBarber {...props} token={token}/>} />
             <Route path='/barber/delete/:id'render={(props)=><DeleteStaff {...props}token={token}/>} />
-            <Route path='/myHairstyles'render={(props)=><MyHairStylesList {...props}token={token}/>} />
+            <Route path='/myHairstyles' exact render={(props)=><MyHairStylesList {...props}token={token}/>} />
+            <Route path='/myHairstyles/image/:id'render={(props)=><HairstylesDetails {...props}token={token}/>} />
           </Switch>
     <Footer/>
     </>

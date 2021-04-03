@@ -15,14 +15,32 @@ return images;
 }
 
 const getFilterImages= async(creatorId)=>{
-    console.log(creatorId);
 const images = await Image.find({userCreator:`${creatorId}`})
-console.log(images);
 return images
 }
+
+const getOneImage = async(id)=>{
+const image = await Image.findById(id)
+
+return image
+}
+
+const getOneAndDelete= async (id,createrID)=>{
+    const image = await Image.findById(id)
+    if(image.userCreator==createrID){
+        const result =await Image.findByIdAndDelete(id)
+        return result
+    }else{
+        return new Error('you are not autorized!')
+    }
+
+}
+
 
 module.exports = {
     addImage,
     getAllImages,
     getFilterImages,
+    getOneImage,
+getOneAndDelete,
 }

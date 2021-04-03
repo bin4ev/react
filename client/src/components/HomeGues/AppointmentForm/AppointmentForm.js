@@ -1,23 +1,26 @@
 import{useState,useEffect} from 'react';
-
-import './AppointmentForm.css'
+import {useHistory} from 'react-router-dom';
+import './AppointmentForm.css';
 import apiAppointments from '../../../services/apiAppointmets';
 import useGetAllStaff from '../../../hook/useFethtAllStaff';
-
+let url ='http://localhost:5000/staff/all';
 
 
 function AppointmentForm({
-    history,
+  
 }){
 const [appointment,setApoitment]= useState('');
-const [allStaff]=useGetAllStaff('http://localhost:5000/staff/all') 
-
+const [allStaff]=useGetAllStaff(url) 
+const history=useHistory()
 useEffect(()=>{
     if(!appointment){
         return
     }
     apiAppointments.saveAppointment(appointment)
-    .then(res=>history.push('/homePage'))
+    .then(res=>{ 
+        console.log(res);
+        history.push('/homePage')}
+      )
     .catch(err=>console.log(err))
 },[appointment])
 

@@ -1,5 +1,5 @@
 import './ServicesShop.css'
-import BookButton from '../../Button/BookButton'
+import BookButton from '../../Buttons/BookButton'
 function ServicesShop() {
   return (
  

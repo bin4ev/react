@@ -1,8 +1,8 @@
 import './HomeGues.css';
 import ScheduleTime from './ScheduleTime/ScheduleTime'
-import BookButton from '../Button/BookButton';
+import BookButton from '../Buttons/BookButton';
 import ImageGallery from './ImageGallery/ImageGallery';
-import ButtonMyHairStyles from '../Button/ButtonMyHairStyles';
+import ButtonMyHairStyles from '../Buttons/ButtonMyHairStyles';
 function HomeGues({
   token,
 }) {

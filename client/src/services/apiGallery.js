@@ -35,10 +35,26 @@ const getFilterImages=(token)=>{
     .then(res=>res.json())
     .catch(err=>console.log(err))
 }
+const getOneImage=(id)=>{
+    console.log(id);
+    return fetch(constants.baseUrl+`imageGallery/getOneImage/${id}`)
+    .then(res=>res.json())
+    .catch(err=>console.log(err))
+}
+
+const deleteImage=(id,token)=>{
+    return fetch(constants.baseUrl+`/imageGallery/image/delete/${id}`,{
+        headers:{
+            "Authorization" : `Bearer ${token.jwt}`,
+        }
+    })
+    .catch(err=>console.log(err))
+}
 export default {
     getFilterImages,
     getAllImages,
     addImage,
- 
+    getOneImage,
+ deleteImage,
 
 }

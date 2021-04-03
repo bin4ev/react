@@ -23,9 +23,14 @@ function StaffMembers({
           <div key={barber._id}>
 
             <Card style={stylesStaff.cardStyle}>
-          
-           <Link to={`/barber/${barber._id}`}>
+         {token?
+         <Link to={`/barber/${barber._id}`}>
                 <CardImg src={barber.imageUrl} alt="Card image cap" />
+              </Link>
+              :
+               <CardImg src={barber.imageUrl} alt="Card image cap" />}
+           <Link to={`/barber/${barber._id}`}>
+              {/*   <CardImg src={barber.imageUrl} alt="Card image cap" /> */}
               </Link>
               <CardBody>
                 <CardTitle tag="h5">{barber.name}</CardTitle>

@@ -1,7 +1,6 @@
 
-
 import { Link } from "react-router-dom";
-import logo from '../../assets/favicon.ico'
+import logo from '../../assets/logo.ico'
 function Nav({
     token,
 }) {

@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const staffService = require('../services/staffService')
 const isAuth= require('../middlewares/isAuth')
+
 router.get('/all', (req, res) => {
     staffService.getStaff()
         .then(data => res.json(data))

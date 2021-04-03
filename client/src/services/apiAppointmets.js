@@ -10,6 +10,8 @@ const saveAppointment=(appointment)=> {
     
         body: JSON.stringify(appointment),
        })
+       .then(res=>res.json())
+       .catch(err=>console.log(err))
 }
 export default{
     saveAppointment,
