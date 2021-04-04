@@ -11,13 +11,13 @@ const HairstylesDetails = ({
     token,
 }) => {
     const [image, setImage] = useState('')
-    console.log(match.params.id);
 
+const id =match.params.id
 useEffect(()=>{
-    api.getOneImage(match.param.id)
+    api.getOneImage(id)
     .then(data=>setImage(data))
     .catch(err=>console.log(err))
-},[match])
+},[])
 
     const deleteImage = () => {
         api.deleteImage(image._id, token)

@@ -35,9 +35,10 @@ const getFilterImages=(token)=>{
     .then(res=>res.json())
     .catch(err=>console.log(err))
 }
+
 const getOneImage=(id)=>{
-    console.log(id);
-    return fetch(constants.baseUrl+`imageGallery/getOneImage/${id}`)
+
+    return fetch(constants.baseUrl+`/imageGallery/getOneImage/${id}`)
     .then(res=>res.json())
     .catch(err=>console.log(err))
 }
