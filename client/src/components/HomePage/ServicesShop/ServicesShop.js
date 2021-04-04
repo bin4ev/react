@@ -1,6 +1,8 @@
 import './ServicesShop.css'
 import BookButton from '../../Buttons/BookButton'
-function ServicesShop() {
+function ServicesShop({
+  token,
+}) {
   return (
  
      
@@ -13,17 +15,17 @@ function ServicesShop() {
             <tr>
               <td>Skin Fade</td>
               <td>50 min</td>
-              <td><BookButton Books /></td>
+             {!token&&<td><BookButton Books /></td>} 
             </tr>
             <tr>
               <td>Dry Cut</td>
               <td>40 min</td>
-              <td><BookButton Books /></td>
+              {!token&&<td><BookButton Books /></td>} 
             </tr>
             <tr>
               <td>Beard</td>
               <td>30 min</td>
-              <td><BookButton Books /></td>
+              {!token&&<td><BookButton Books /></td>} 
             </tr>
           </tbody>
 

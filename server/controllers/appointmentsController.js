@@ -1,6 +1,7 @@
 
 const router = require('express').Router();
-const { addAppointment } = require('../../services/appointmentsService');
+const isAuth= require('../middlewares/isAuth')
+const { addAppointment,getAll } = require('../services/appointmentsService');
 
 
 router.post('/save', (req, res) => {
@@ -11,4 +12,12 @@ router.post('/save', (req, res) => {
         .catch(err => console.log(err))
 
 })
+
+router.get('/getAll',isAuth,(req,res)=>{
+    console.log(req.user.username);
+getAll(req.user.username)
+.then(appointments=>res.send(appointments))
+.catch(err=>console.log(err))
+})
+
 module.exports = router;

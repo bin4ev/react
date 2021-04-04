@@ -10,7 +10,7 @@ function HomePage({
     <div className='container'>
     <p className='address'>address: Sofia, ul Korab Planina 26, 8600</p>
   <StaffMembers token={token}/>
-  <ServicesShop />
+  <ServicesShop token={token}/>
     </div>
 
    

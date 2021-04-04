@@ -4,13 +4,13 @@ import { Card, CardImg, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
 
 import constants from '../../../constants/constants'
 import stylesStaff from './stylesStaff';
-import useGetAllStaff from '../../../hook/useFethtAllStaff';
+import useGetAllComponents from '../../../hook/useFethtAllComponents';
 
 function StaffMembers({
   token,
 }) {
 
-  const [allStaff] = useGetAllStaff(constants.baseUrl + '/staff/all')
+  const [allStaff] = useGetAllComponents(constants.baseUrl + '/staff/all')
   return (
     <>
 

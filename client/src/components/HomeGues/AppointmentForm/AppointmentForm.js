@@ -2,7 +2,7 @@ import{useState,useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import './AppointmentForm.css';
 import apiAppointments from '../../../services/apiAppointmets';
-import useGetAllStaff from '../../../hook/useFethtAllStaff';
+import useGetAllStaff from '../../../hook/useFethtAllComponents';
 let url ='http://localhost:5000/staff/all';
 
 

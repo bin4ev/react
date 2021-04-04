@@ -17,7 +17,7 @@ import EditBarber from './components/HomePage/StaffMembers/EditBarber/EditBarber
 import DeleteStaff from './components/HomePage/StaffMembers/DeleteStaff/DeleteStaff';
 import MyHairStylesList from './components/MyHariStylesList/MyHairStylesList';
 import HairstylesDetails from './components/MyHariStylesList/HairstylesDetails';
-
+import MyAppointmentsList from './components/MyAppointmentsList/MyAppointmentsList';
 
 function App() {
 
@@ -47,6 +47,7 @@ console.log(token);
             <Route path='/barber/delete/:id'render={(props)=><DeleteStaff {...props}token={token}/>} />
             <Route path='/myHairstyles' exact render={(props)=><MyHairStylesList {...props}token={token}/>} />
             <Route path='/myHairstyles/image/:id'render={(props)=><HairstylesDetails {...props}token={token}/>} />
+            <Route path='/myAppointments' render={(props)=><MyAppointmentsList {...props}token={token}/>} />
           </Switch>
     <Footer/>
     </>

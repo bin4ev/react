@@ -13,6 +13,19 @@ const saveAppointment=(appointment)=> {
        .then(res=>res.json())
        .catch(err=>console.log(err))
 }
+
+const getAll=(token)=>{
+return fetch(constants.baseUrl+'/appointmets/getAll',{
+    method: 'GET',
+    headers: {
+        "Authorization" : `Bearer ${token.jwt}`,
+    },
+})
+.then(res=>res.json())
+.catch(err=>console.log(err))
+
+}
 export default{
     saveAppointment,
+    getAll,
 }

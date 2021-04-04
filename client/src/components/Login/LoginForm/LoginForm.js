@@ -21,7 +21,7 @@ const submitForm = (data)=>{
     .then(token=>{
 
         setToken(decodedToken(token))
-        history.push('/homePage')
+        history.push('/')
     })
     .catch(err=>console.log(err))
 }

@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 
-const useGetAllStaff = (url) => {
+const useGetAllStaff = (url,) => {
   const   [state, setState] = useState([]);
     useEffect(() => {
-        fetch(url)
+        fetch(url,{
+          
+        })
             .then(res => res.json())
             .then(result=>setState(result))
             .catch(err=>console.log(err))

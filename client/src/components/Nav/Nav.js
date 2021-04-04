@@ -17,11 +17,11 @@ function Nav({
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                     <li className="nav-item active">
-                            <Link to='/homePage' className="nav-link" >OUR STAFF AND SERVICE <span className="sr-only">(current)</span></Link>
+                            <Link to='/homePage' className="nav-link" >Our staff and service <span className="sr-only">(current)</span></Link>
                         </li>
                         {token ?
                         
-                            <Link to='/addImage' > <li className="nav-link mr-5">Add Image to Gallery</li></Link>
+                            <Link to='/addImage' > <li className="nav-link mr-5">Add image to main gallery</li></Link>
                             : null}
                     </ul>
                     <ul className="navbar-nav mr-20">
@@ -44,7 +44,6 @@ function Nav({
             </nav>
 
         </>
-
 
     );
 }

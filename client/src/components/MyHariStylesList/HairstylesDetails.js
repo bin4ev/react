@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
 import api from '../../services/apiGallery';
 
@@ -11,13 +11,13 @@ const HairstylesDetails = ({
     token,
 }) => {
     const [image, setImage] = useState('')
-    console.log(match);
+    console.log(match.params.id);
 
 useEffect(()=>{
-    api.getOneImage(match.params.id)
+    api.getOneImage(match.param.id)
     .then(data=>setImage(data))
     .catch(err=>console.log(err))
-},[])
+},[match])
 
     const deleteImage = () => {
         api.deleteImage(image._id, token)
