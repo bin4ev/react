@@ -18,7 +18,7 @@ const RegisterForm = ({
 
     const submitForm = (data) => {
         api.registerUserRequest(data)
-            .then(() => history.push('./login'))
+            .then((data) => history.push('/login'))
             .catch(err => console.log(err))
     }
 

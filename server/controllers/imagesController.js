@@ -32,7 +32,7 @@ router.post('/addImage', (req, res) => {
 
  router.get('/image/delete/:id',isAuth,(req,res)=>{
      imageService.getOneAndDelete(req.params.id,req.user._id)
-     .then()
+     .then(data=>res.send(data))
      .catch(err=>console.log(err))
  })
 

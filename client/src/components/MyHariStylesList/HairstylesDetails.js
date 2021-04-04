@@ -1,27 +1,26 @@
 
-import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import { useState, useEffect } from 'react';
-
 import api from '../../services/apiGallery';
 
 
 const HairstylesDetails = ({
     match,
     token,
+history,
 }) => {
     const [image, setImage] = useState('')
 
-const id =match.params.id
-useEffect(()=>{
-    api.getOneImage(id)
-    .then(data=>setImage(data))
-    .catch(err=>console.log(err))
-},[])
+    const id = match.params.id
+    useEffect(() => {
+        api.getOneImage(id)
+            .then(data => setImage(data))
+            .catch(err => console.log(err))
+    }, [])
 
     const deleteImage = () => {
         api.deleteImage(image._id, token)
-            .then()
+            .then(()=>history.push('/myHairstyles'))
             .catch(err => console.log(err))
     }
     console.log(image);
@@ -32,15 +31,12 @@ useEffect(()=>{
 
             <img src={image.src} alt='my image' />
             <div className='card-text'>
-                {/*     <Link to={`//myHairstyles/image/delete:id/${barber._id}`}><Button>Delete</Button></Link> */}
+               
                 <Button onClick={deleteImage}>Delete</Button>
             </div>
         </div>
     )
 }
-
-
-
 
 
 export default HairstylesDetails;

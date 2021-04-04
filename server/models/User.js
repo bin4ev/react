@@ -18,9 +18,6 @@ const userSchema = new mongoose.Schema({
         require: true,
          unique: true,
     },
-    myImages:[]
-        
-    
 
 })
 
