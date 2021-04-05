@@ -7,7 +7,7 @@ router.post('/register', (req, res,next) => {
     //validate passwords
     userService.createUser(username, password)
         .then(user =>
-            res.json(user))
+            res.send(user))
         .catch(next)
 })
 

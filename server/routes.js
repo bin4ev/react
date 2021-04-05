@@ -11,5 +11,6 @@ router.use('/staff',staffController);
 router.use('/imageGallery',imagesController);
 router.use('/appointmets',appointmentsController);
 router.use('/contacts',contactsController)
-
+router.use('/allComments',contactsController)
+router.use('/allComments/',contactsController)
 module.exports = router;

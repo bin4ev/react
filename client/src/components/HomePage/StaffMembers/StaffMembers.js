@@ -16,7 +16,7 @@ function StaffMembers({
 
       <h1 className="display-4">Top Barbers Staff</h1>
       <hr className="my-4" />
-      {token?.role=='admin' && <Link to='/addBarber'><Button color="secondary">Add new Barber</Button></Link>}
+      {token?.role=='admin' &&<Link to='/addBarber'><Button color="secondary">Add new Barber</Button></Link>}
 
       <div className='container'>
         {allStaff.map(barber =>

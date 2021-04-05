@@ -5,7 +5,7 @@ import { Button } from "reactstrap";
 
 import './RegisterForm.css';
 import api from '../../../services/apiUsers';
-import schema from '../../validatorsSchema/schema';
+import validatorSchema from '../../../utils/validatorsSchema'
 
 
 const RegisterForm = ({
@@ -13,7 +13,7 @@ const RegisterForm = ({
 }) => {
 
     const { register, handleSubmit, errors } = useForm({
-        resolver: yupResolver(schema.register)
+        resolver: yupResolver(validatorSchema.register)
     })
 
     const submitForm = (data) => {

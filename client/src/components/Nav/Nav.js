@@ -20,9 +20,9 @@ function Nav({
                             <Link to='/homePage' className="nav-link" >Our staff and service <span className="sr-only">(current)</span></Link>
                         </li>
                         {token ?
-                        
                             <Link to='/addImage' > <li className="nav-link mr-5">Add image to main gallery</li></Link>
                             : null}
+                             {token?.role=='admin'&& <Link to='/allComments' > <li className="nav-link mr-5">All comments</li></Link>} 
                     </ul>
                     <ul className="navbar-nav mr-20">
                         {!token ?

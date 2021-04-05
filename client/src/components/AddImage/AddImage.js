@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import schema from '../validatorsSchema/schema';
+import validatorsSchema from '../../utils/validatorsSchema';
 import { Button } from 'reactstrap';
 import apiGallery from '../../services/apiGallery';
 import './AddImage.css';
@@ -12,7 +12,7 @@ const AddImage = ({
     token,
 }) => {
     const { register, handleSubmit, errors } = useForm({
-        resolver: yupResolver(schema.addImage)
+        resolver: yupResolver(validatorsSchema.addImage)
     })
     const [image, setImage] = useState('')
      

@@ -2,38 +2,38 @@ const router = require('express').Router();
 const isAuth = require('../middlewares/isAuth')
 const imageService = require('../services/imageService')
 
-router.get('/getAllImages', (req, res) => {
+router.get('/getAllImages', (req, res,next) => {
  
     imageService.getAllImages()
         .then(images =>res.send(images))
-        .catch(err => console.log(err))
+        .catch(next)
 })
 
-router.get('/getFilterImages',(req,res)=>{
+router.get('/getFilterImages',(req,res,next)=>{
 
     imageService.getFilterImages(req.user._id)
         .then(images =>res.send(images))
-        .catch(err => console.log(err))
+        .catch(next)
 })
 
-router.get('/getOneImage/:id',(req,res)=>{
+router.get('/getOneImage/:id',(req,res,next)=>{
     imageService.getOneImage(req.params.id)
     .then(image =>res.send(image))
-        .catch(err => console.log(err))
+        .catch(next)
 })
 
-router.post('/addImage', (req, res) => {
+router.post('/addImage', (req, res,next) => {
     const urlImage=req.body.imageURL;
  
      imageService.addImage(urlImage,req.user._id)
          .then(image =>res.send('image is save!'))
-         .catch(err => console.log(err))
+         .catch(next)
  })
 
- router.get('/image/delete/:id',isAuth,(req,res)=>{
+ router.get('/image/delete/:id',isAuth,(req,res,next)=>{
      imageService.getOneAndDelete(req.params.id,req.user._id)
      .then(data=>res.send(data))
-     .catch(err=>console.log(err))
+     .catch(next)
  })
 
  router.post('/addImage', (req, res) => {
@@ -41,7 +41,7 @@ router.post('/addImage', (req, res) => {
  
      imageService.addImage(urlImage,req.user._id)
          .then(image =>res.send('image is save!'))
-         .catch(err => console.log(err))
+         .catch(next)
  })
 
 module.exports = router;

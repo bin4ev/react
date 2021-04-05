@@ -18,10 +18,11 @@ import DeleteStaff from './components/HomePage/StaffMembers/DeleteStaff/DeleteSt
 import MyHairStylesList from './components/MyHariStylesList/MyHairStylesList';
 import HairstylesDetails from './components/MyHariStylesList/HairstylesDetails';
 import MyAppointmentsList from './components/MyAppointmentsList/MyAppointmentsList';
+import Allfeedback from './components/AllFeedback.js/Allfeedback';
 
 function App() {
 
-const [token,setToken] =useState(null)
+const [token,setToken] =useState()
 
 console.log(token);
  
@@ -48,6 +49,7 @@ console.log(token);
             <Route path='/myHairstyles' exact render={(props)=><MyHairStylesList {...props}token={token}/>} />
             <Route path='/myHairstyles/image/:id'render={(props)=><HairstylesDetails {...props}token={token}/>} />
             <Route path='/myAppointments' render={(props)=><MyAppointmentsList {...props}token={token}/>} />
+            <Route path='/allComments' render={(props)=><Allfeedback {...props}token={token}/>} />
           </Switch>
     <Footer/>
     </>

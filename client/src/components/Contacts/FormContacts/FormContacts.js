@@ -1,8 +1,10 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import schema from '../../validatorsSchema/schema';
-import './FormContacts.css'
-import api from '../../../services/apiFormContact'
+import validatorsSchema from '../../../utils/validatorsSchema';
+import './FormContacts.css';
+import {withRouter} from 'react-router-dom';
+
+import api from '../../../services/apiContact'
 
 
 function FormContacts({
@@ -10,7 +12,7 @@ function FormContacts({
 }) {
 
   const { register, handleSubmit, errors } = useForm({
-    resolver: yupResolver(schema.formContacts)
+    resolver: yupResolver(validatorsSchema.formContacts)
   })
 
   const submitForm = (formInfo) => {
@@ -37,4 +39,4 @@ function FormContacts({
   );
 }
 
-export default FormContacts;
+export default withRouter(FormContacts);

@@ -8,18 +8,18 @@ const feedbackSchema = new mongoose.Schema({
     username: {
         type: String,
         require: true,
-        index:true, unique:true,sparse:true
+     
     },
 
     useremail: {
         type: String,
         require: true,
-        unique: true,
+   
     },
     usermessage:{
         type: String,
         require: true,
-        index:true, unique:true,sparse:true
+ 
     },
   
 

@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { withRouter } from 'react-router-dom';
 
-import schema from '../../validatorsSchema/schema';
+import validatorsSchema from '../../../utils/validatorsSchema'
 import api from '../../../services/apiUsers';
 
 import decodedToken from '../../../utils/decodeToken'
@@ -12,7 +12,7 @@ function LoginForm({
     history,
 }) {
     const { register, handleSubmit, errors } = useForm({
-        resolver: yupResolver(schema.login)
+        resolver: yupResolver(validatorsSchema.login)
     });
 
 
