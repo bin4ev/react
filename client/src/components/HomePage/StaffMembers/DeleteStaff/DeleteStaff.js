@@ -18,7 +18,6 @@ const DeleteStaff = ({
             </div>
     
         )
-    
 
 }
 export default DeleteStaff;
