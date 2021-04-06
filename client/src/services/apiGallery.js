@@ -30,6 +30,7 @@ const getFilterImages=(token)=>{
         headers: {
             "Authorization" : `Bearer ${token.jwt}`,
             'Content-Type': 'application/json',
+          
         },
     })
     .then(res=>res.json())

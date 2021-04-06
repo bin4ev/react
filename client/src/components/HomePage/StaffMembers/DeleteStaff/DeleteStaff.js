@@ -1,11 +1,11 @@
 import api from '../../../../services/apiStaff';
-import { useEffect } from 'react';
-
+import { useEffect,useContext } from 'react';
+import TokenContext from '../../../Context/TokenContext';
 const DeleteStaff = ({
     match,
-token
 }) => {
- 
+ const [token] =useContext(TokenContext);
+
     useEffect(() => {
         api.deleteBarber(match.params.id,token)
         .catch(err =>console.log(err))

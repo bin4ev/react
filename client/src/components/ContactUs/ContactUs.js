@@ -1,7 +1,7 @@
 
-import './Contacts.css';
+import './ContactUs.css';
 import FormContacts from './FormContacts/FormContacts'
-function Contacts() {
+function ContactUs() {
   return (
     <div className="contacts-wrapper">
       <div className='content-wrap'>
@@ -18,4 +18,4 @@ function Contacts() {
   );
 }
 
-export default Contacts;
+export default ContactUs;

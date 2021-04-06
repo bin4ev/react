@@ -1,15 +1,15 @@
 
 import { Button } from 'reactstrap';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import api from '../../services/apiGallery';
-
+import TokenContext from '../Context/TokenContext';
 
 const HairstylesDetails = ({
     match,
-    token,
-history,
+    history,
 }) => {
-    const [image, setImage] = useState('')
+    const [token] = useContext(TokenContext);
+    const [image, setImage] = useState('');
 
     const id = match.params.id
     useEffect(() => {
@@ -20,7 +20,7 @@ history,
 
     const deleteImage = () => {
         api.deleteImage(image._id, token)
-            .then(()=>history.push('/myHairstyles'))
+            .then(() => history.push('/myHairstyles'))
             .catch(err => console.log(err))
     }
     console.log(image);
@@ -31,7 +31,7 @@ history,
 
             <img src={image.src} alt='my image' />
             <div className='card-text'>
-               
+
                 <Button onClick={deleteImage}>Delete</Button>
             </div>
         </div>

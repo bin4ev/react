@@ -23,9 +23,9 @@ router.get('/getOneImage/:id',(req,res,next)=>{
 })
 
 router.post('/addImage', (req, res,next) => {
-    const urlImage=req.body.imageURL;
- 
-     imageService.addImage(urlImage,req.user._id)
+    const src=req.body.imageUrl;
+
+     imageService.addImage(src,req.user._id)
          .then(image =>res.send('image is save!'))
          .catch(next)
  })

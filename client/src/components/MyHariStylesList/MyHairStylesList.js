@@ -1,13 +1,11 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect,useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import apiGallery from '../../services/apiGallery';
-
-const MyHairStylesList = ({
-    token,
- 
-}) => {
+import TokenContext from '../Context/TokenContext';
+const MyHairStylesList = () => {
+    const [ token] =useContext(TokenContext);
     const [images, SetImages] = useState([]);
 
     useEffect(() => {
@@ -29,8 +27,6 @@ const MyHairStylesList = ({
                     /></Link>
 
                 </div>))}
-
-
             </div>
 
         </div>

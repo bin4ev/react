@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const Image= require('../models/Image');
 
 const addImage = async (urlImage, userId)=>{
+ 
 let image =  await  new Image({src:urlImage,userCreator:userId});
 
 return image.save();

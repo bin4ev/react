@@ -25,10 +25,10 @@ function FormContacts({
 
     <form className='forms-contacts' onSubmit={handleSubmit(submitForm)}>
       <div >
-        <label forHtml="username">Name:</label>
+        <label forhtml="username">Name:</label>
         <input type="text" id="name" name="username" placeholder='Enter your name' ref={register} />
         <p>{errors.username?.message}</p>
-        <label forHtml="email">E-mail:</label>
+        <label forhtml="email">E-mail:</label>
         <input type="email" id="email" name="useremail" placeholder='examp@gmail.com' ref={register} />
         <p>{errors.useremail?.message}</p>
         <textarea resizde="none" id="msg" name="usermessage" placeholder='Please write your messages....' ref={register}></textarea>

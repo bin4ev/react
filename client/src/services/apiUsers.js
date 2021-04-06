@@ -1,4 +1,5 @@
 import  constants from '../constants/constants'
+import errorHandler from '../utils/errorHandler';
 const{baseUrl}=constants;
 
 const registerUserRequest= (state)=>{
@@ -13,7 +14,7 @@ const registerUserRequest= (state)=>{
         body: JSON.stringify(state),
     })
         .then(response => response.json())
-        .catch(err=>console.log(err))
+        .catch(err=>errorHandler(err))
 
 }
 const loginUser = (data) => {

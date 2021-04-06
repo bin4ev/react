@@ -1,9 +1,13 @@
 
 import { Link } from "react-router-dom";
+import TokenContext from '../Context/TokenContext';
+import {useContext} from 'react';
 import logo from '../../assets/logo.ico'
+
 function Nav({
-    token,
-}) {
+    
+}){
+    const [token] =useContext(TokenContext);
 
     return (
         <>

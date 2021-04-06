@@ -1,17 +1,18 @@
 
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
-import { useState, useEffect } from 'react'
+import { useState, useEffect,useContext } from 'react'
 
-import './BarberDetails.css'
+import './BarberDetails.css';
 import api from '../../../../services/apiStaff';
-
+import TokenContext from '../../../Context/TokenContext';
 
 const BarberDetails = ({
     match,
-    token,
+    
 }) => {
-    const [barber, setBarber] = useState('')
+    const [token]=useContext(TokenContext);
+    const [barber, setBarber] = useState('');
 
     useEffect(() => {
         api.getOne(match.params)

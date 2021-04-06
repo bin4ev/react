@@ -13,8 +13,8 @@ router.post('/save', (req, res,next) => {
 
 })
 
-router.get('/getAll',isAuth,(req,res)=>{
-    console.log(req.user.username);
+router.get('/getAll',isAuth,(req,res,next)=>{
+  
 getAll(req.user.username)
 .then(appointments=>res.send(appointments))
 .catch(next)

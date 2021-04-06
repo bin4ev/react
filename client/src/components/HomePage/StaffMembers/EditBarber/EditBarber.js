@@ -1,20 +1,21 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect,useContext } from 'react';
+
 import api from '../../../../services/apiStaff';
 import Form from '../Form/Form'
-
+import TokenContext from '../../../Context/TokenContext';
 
 const EditBarber = ({
     match,
     history,
-    token,
 }) => {
-    const [barber, setBarber] = useState({})
+    const [token]=useContext(TokenContext);
+    const [barber, setBarber] = useState({});
 
     useEffect(() => {
         api.getOne(match.params,)
             .then(data => setBarber(data))
             .catch(err => console.log(err))
-    }, [match])
+    }, [match]);
 
 
 

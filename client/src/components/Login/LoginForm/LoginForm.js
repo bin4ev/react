@@ -5,12 +5,13 @@ import { withRouter } from 'react-router-dom';
 
 import validatorsSchema from '../../../utils/validatorsSchema'
 import api from '../../../services/apiUsers';
-
 import decodedToken from '../../../utils/decodeToken'
+import {useContext,} from 'react';
+import TokenContext from '../../Context/TokenContext'
 function LoginForm({
-    setToken,
     history,
 }) {
+    const [token,setToken] =useContext(TokenContext);
     const { register, handleSubmit, errors } = useForm({
         resolver: yupResolver(validatorsSchema.login)
     });
@@ -18,9 +19,9 @@ function LoginForm({
 
 const submitForm = (data)=>{
     api.loginUser(data)
-    .then(token=>{
+    .then(data=>{
 
-        setToken(decodedToken(token))
+        setToken((oldState)=>oldState=decodedToken(data))
         history.push('/')
     })
     .catch(err=>console.log(err))

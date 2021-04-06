@@ -18,6 +18,7 @@ useEffect(()=>{
     .then(dataImages=>SetImages(dataImages))
     .catch(err=> console.log(err))
 },[])
+
     return (
 
 
