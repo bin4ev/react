@@ -6,13 +6,5 @@ return(
     :<div class="alert alert-dark" style={{display:'block'}} role="alert">{info} </div> 
 )
 
-
-
-
-
-
-    
-    
-   
 }
 export default notification;
