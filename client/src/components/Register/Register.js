@@ -4,9 +4,6 @@ import RegisterForm from './RegisterForm/RegisterForm'
 import './Register.css'
 
 class Register extends Component {
-    constructor(props) {
-        super(props)
-    }
 
     render() {
         return (

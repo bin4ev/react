@@ -4,10 +4,7 @@ import ServicesShop from './ServicesShop/ServicesShop';
 import StaffMembers from './StaffMembers/StaffMembers';
 
 
-function HomePage({
-
-
-}) {
+function HomePage() {
   return (
     <div className='container-fluid'>
   <StaffMembers/>

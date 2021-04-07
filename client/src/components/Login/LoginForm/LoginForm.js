@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Button } from "reactstrap";
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';

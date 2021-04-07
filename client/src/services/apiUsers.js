@@ -1,5 +1,5 @@
+/* eslint-disable import/no-anonymous-default-export */
 import  constants from '../constants/constants'
-import errorHandler from '../utils/errorHandler';
 const{baseUrl}=constants;
 
 const registerUserRequest= (state)=>{
@@ -14,7 +14,7 @@ const registerUserRequest= (state)=>{
         body: JSON.stringify(state),
     })
         .then(response => response.json())
-        .catch(err=>errorHandler(err))
+        .catch(err=>console.log(err))
 
 }
 const loginUser = (data) => {

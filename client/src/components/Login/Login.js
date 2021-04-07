@@ -1,9 +1,7 @@
 
 import LoginForm from './LoginForm/LoginForm'
 import './Login.css'
-const Login=({
-   
-})=> {
+const Login=()=> {
 
         return (
             <div className='login-wrapper'>

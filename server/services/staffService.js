@@ -32,13 +32,17 @@ const getOne = async (barberId,) => {
 }
 
 const edit = async (_id, name, description, imageUrl, userId) => {
-    
-    let barber = await Staff.findById(_id);
+    try {
+        let barber = await Staff.findById(_id);
     if (barber.creator === userId) {
         let result = await Staff.findByIdAndUpdate(_id, { name, description, imageUrl })
      
         return result
-    }return  new mongoose.Error ({message:'You are not authorized!'}) 
+    }
+    } catch (error) {
+        return  err({message:'You are not authorized!'}) 
+    }
+    
 }
 
 const deleteBarber = async (_id,userId) => {

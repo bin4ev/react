@@ -1,6 +1,8 @@
 const errorHandler = (err, req, res, next) => {
-
-    err.messages = err.messages || 'Something wrong !!!';
+if(err.code=='11000'){
+    err.messages='Duplicate keys'
+}
+    err.messages = err.messages || err;
     err.status = err.status || 500;
     console.log(err.messages);
 

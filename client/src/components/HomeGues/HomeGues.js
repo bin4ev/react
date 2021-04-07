@@ -7,26 +7,25 @@ import ImageGallery from './ImageGallery/ImageGallery';
 import ButtonMyHairStyles from '../Buttons/ButtonMyHairStyles';
 import MyAppointmentsButton from '../Buttons/MyAppointmentsButton';
 import TokenContext from '../Context/TokenContext'
-function HomeGues({
-
-}) {
+function HomeGues() {
 const [token]=useContext(TokenContext);
     return (
         <>
-          <ScheduleTime />
+       
         
-                <div className='wraper'>
-                  <div className='head'>
-                  {!token?<h1 className="display-4">Book your appointment now</h1>:null}  
-           
-                  </div>
-                  {!token?<BookButton />
-                  :<div><ButtonMyHairStyles/>
-                  <MyAppointmentsButton/>
+                <div className='container'>
+                <ScheduleTime />
+                {!token?<BookButton />
+                  :
+                  <div><ButtonMyHairStyles/>
+                      <MyAppointmentsButton/>
                   </div>}
              
                   <ImageGallery/>
                 </div>
+
+              
+         
                 
         
         </>

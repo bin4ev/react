@@ -24,7 +24,7 @@ color:white
   transition: all 0.5s;
   cursor: pointer;
   margin: auto;
-  float: left;
+  float: right;
   margin-right: 10px;
 }
 

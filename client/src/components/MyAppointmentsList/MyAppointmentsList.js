@@ -1,10 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import {useState,useEffect,useContext} from 'react';
 import api from '../../services/apiAppointmets';
 import TokenContext from '../Context/TokenContext';
 
-const MyAppointmentsList = ({
-
-}) => {
+const MyAppointmentsList = () => {
   const [token]=useContext(TokenContext);
   const  [appointments,setAppointments] = useState([]);
 

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 
 import { Button } from 'reactstrap';
 import { useState, useEffect, useContext } from 'react';
@@ -29,7 +30,7 @@ const HairstylesDetails = ({
 
         <div className='card-details'>
 
-            <img src={image.src} alt='my image' />
+            <img src={image.src} alt='myImage' />
             <div className='card-text'>
 
                 <Button onClick={deleteImage}>Delete</Button>

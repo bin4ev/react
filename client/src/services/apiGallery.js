@@ -1,4 +1,5 @@
-import  constants from '../constants/constants'
+/* eslint-disable import/no-anonymous-default-export */
+import  constants from '../constants/constants';
 
 const addImage=(imageURL,token)=> {
     return fetch(constants.baseUrl+'/imageGallery/addImage',
@@ -13,9 +14,7 @@ const addImage=(imageURL,token)=> {
 
         body: JSON.stringify(imageURL),
     })
-        .then(response => console.log(response))
-        .catch(err=>console.log(err))
-
+  
 }
 const getAllImages=()=> {
     return fetch(constants.baseUrl+'/imageGallery/getAllImages',{

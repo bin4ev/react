@@ -22,7 +22,7 @@ useEffect(()=>{
     return (
 
 
-        <div className='container'>
+        <div className='carausel'>
             <UncontrolledCarousel className='image-style' items={images} />
 
         </div>

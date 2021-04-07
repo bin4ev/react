@@ -1,9 +1,9 @@
 
   const styleStaff = {
      cardStyle:{
-      width:'15%',
+       width:'15%',
       float:'left',
-       margin:'20px'
+      margin:'20px',
     },
 }
 export default styleStaff;

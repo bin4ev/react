@@ -1,5 +1,6 @@
 
-import {  useContext } from 'react'
+
+import {  useContext ,useState} from 'react'
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import validatorsSchema from '../../utils/validatorsSchema';
@@ -7,11 +8,13 @@ import { Button } from 'reactstrap';
 import apiGallery from '../../services/apiGallery';
 import './AddImage.css';
 import TokenContext from '../Context/TokenContext';
+import notification from '../../utils/notification'
 
 const AddImage = ({
     history,
    
 }) => {
+    const[notif,setNotif]=useState('')
     const [token] = useContext(TokenContext);
     const { register, handleSubmit, errors } = useForm({
         resolver: yupResolver(validatorsSchema.addImage)
@@ -20,15 +23,21 @@ const AddImage = ({
     const submitForm = ((image) => {
 
         apiGallery.addImage(image, token)
-            .then(res => history.push('/'))
+            .then(res =>{
+               setNotif('image is save')
+               setTimeout(()=>{
+                    history.push('/')
+               },2000)
+             })
             .catch(err => console.log(err))
     })
 
 
     return (
         <>
+      
             <form className='form' onSubmit={handleSubmit(submitForm)}>
-
+            {notification(notif)}
                 <div className='form-details'>
                     <h3>-- Add your Image --</h3>
                     <label htmlFor='imageUrl'></label>

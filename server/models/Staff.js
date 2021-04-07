@@ -8,23 +8,23 @@ const staffSchema = new mongoose.Schema({
     name: {
         type: String,
         require: true,
-        unique: true,
+       
     },
 
     description: {
         type: String,
-        require: true,
-        unique: true,
+      
+
     },
-    imageUrl:{
+    imageUrl: {
         type: String,
         require: true,
-         unique: true,
+        
     },
-    creator:{
+    creator: {
         type: String,
-        require: true, index:true, unique:true,sparse:true
        
+
     }
 
 })
