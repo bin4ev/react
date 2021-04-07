@@ -3,14 +3,15 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import validatorsSchema from '../../../utils/validatorsSchema';
 import './FormContacts.css';
 import {withRouter} from 'react-router-dom';
-
+import{useState} from 'react';
 import api from '../../../services/apiContact'
+import notification from '../../../utils/notification';
 
 
 function FormContacts({
   history,
 }) {
-
+const [notif,setNotif]=useState('');
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(validatorsSchema.formContacts)
   })
@@ -18,12 +19,18 @@ function FormContacts({
   const submitForm = (formInfo) => {
   
     api.formContacts(formInfo)
-      .then(()=>history.push('/'))
+      .then(()=>{
+        setNotif('Thank you for your feedback!')
+        setTimeout(()=>{
+            history.push('/')
+        },2000)
+      })
       .catch(err => console.log(err))
   }
   return (
 
     <form className='forms-contacts' onSubmit={handleSubmit(submitForm)}>
+      {notification(notif)}
       <div >
         <label forhtml="username">Name:</label>
         <input type="text" id="name" name="username" placeholder='Enter your name' ref={register} />

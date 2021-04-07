@@ -14,16 +14,15 @@ const staffSchema = new mongoose.Schema({
     description: {
         type: String,
         require: true,
-        unique: true,
     },
     imageUrl:{
         type: String,
         require: true,
-         unique: true,
+     
     },
     creator:{
         type: String,
-        require: true, index:true, unique:true,sparse:true
+    
        
     }
 

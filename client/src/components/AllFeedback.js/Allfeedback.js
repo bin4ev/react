@@ -10,7 +10,7 @@ const Allfeedback = () => {
     const [commentIsDeleted, setCommentIsDeleted] = useState('');
     useEffect(() => {
         api.getAllComments(token)
-            .then(data => setComments(data))
+            .then(data => setComments(data.reverse()))
             .catch(err => console.log(err))
     }, [commentIsDeleted]);
 

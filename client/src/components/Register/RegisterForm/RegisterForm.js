@@ -6,7 +6,7 @@ import { Button } from "reactstrap";
 import './RegisterForm.css';
 import api from '../../../services/apiUsers';
 import validatorSchema from '../../../utils/validatorsSchema'
-import errorHandler from '../../../utils/errorHandler';
+
 
 
 const RegisterForm = ({
@@ -20,7 +20,7 @@ const RegisterForm = ({
     const submitForm = (data) => {
         api.registerUserRequest(data)
             .then((data) => history.push('/login'))
-            .catch(err => errorHandler(err))
+            .catch(err =>console.log(err))
     }
 
     return (

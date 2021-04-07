@@ -1,15 +1,19 @@
+import notification from '../../../../utils/notification';
+
 const Form = ({
     setBarberValue,
     submit,
     name,
     description,
     imageUrl,
+    notif
    
 }) => {
     return (
         <div className='form'>
             <div className='form-data'>
                 <form onSubmit={submit}>
+                    {notification(notif)}
                     <input type='text' name='name' placeholder='Name' value={name}
                      onChange={(e)=>
                      setBarberValue((prevState)=>{return{...prevState ,name: e.target.value }})}>

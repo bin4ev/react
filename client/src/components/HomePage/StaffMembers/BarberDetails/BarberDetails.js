@@ -42,6 +42,8 @@ const BarberDetails = ({
 
 
         </div>
+
+        
     );
 }
 
