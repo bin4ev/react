@@ -11,6 +11,9 @@ import decodedToken from '../../../utils/decodeToken';
 import errorHandler from '../../../utils/errorHandler';
 
 
+
+
+
 function LoginForm({
     history,
 }) {
@@ -22,14 +25,22 @@ function LoginForm({
 
     const submitForm = (data) => {
         api.loginUser(data)
+
             .then(data => {
-                setError(null)
-                console.log(data);
+                if(data.messages){
+                    throw Error('Invalid password')
+                }
+               
                 setToken((oldState) => oldState = decodedToken(data))
+                setError(null)
                 history.push('/')
             })
-            .catch(err => console.log(err.message))
+            .catch(err => {
+                setError(err.message);
+            
+            })
     }
+    console.log(error);
     return (
         <div className='form'>
             <div className='form-data'>

@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { SECRET } = require('../config/config')
+const { SECRET } = require('../config/config');
+const { json } = require('express');
 
 const createUser = (username, password) => {
     try {
@@ -18,11 +19,11 @@ const login = async (username, password) => {
     try {
         let user = await User.findOne({ username })
         if (!user.username) {
-            return  Error('Invalid Username !')
+            throw  Error('Invalid Username !')
         }
         let isMuch = await bcrypt.compare(password, user.password)
         if (!isMuch) {
-            return  Error('invalid data !')
+            throw  new mongoose.Error ('invalid data !')
         }
 
         if (user.username === 'Dobrev') {
@@ -34,7 +35,7 @@ const login = async (username, password) => {
         }
 
     } catch (error) {
-      return error
+      throw error
     }
 
 
