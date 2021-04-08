@@ -7,7 +7,7 @@ const MyMap = () => {
   return (
     <Map height={200} width={400} defaultCenter={[42.658100,23.346580]} defaultZoom={15}>
         <Overlay anchor={[42.658100,23.346580]} offset={[120, 79]}>
-        <img src={logo} width={120} height={79} alt='' />
+        <img src={logo} width={120} height={79} style={{borderRadius:'50px'}} alt='' />
       </Overlay>
     </Map>
   )

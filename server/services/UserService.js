@@ -17,12 +17,12 @@ const createUser = (username, password) => {
 const login = async (username, password) => {
     try {
         let user = await User.findOne({ username })
-        if (!user) {
-            throw new mongoose.Error('Invalid Username !')
+        if (!user.username) {
+            return  Error('Invalid Username !')
         }
         let isMuch = await bcrypt.compare(password, user.password)
         if (!isMuch) {
-            throw new mongoose.Error('invalid data !')
+            return  Error('invalid data !')
         }
 
         if (user.username === 'Dobrev') {
