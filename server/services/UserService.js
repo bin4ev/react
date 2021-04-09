@@ -3,11 +3,11 @@ const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { SECRET } = require('../config/config');
-const { json } = require('express');
+const{ADMIN_NAME} = require('../config/config');
 
-const createUser = (username, password) => {
+const createUser = async(username, password) => {
     try {
-        let user = new User({ username, password })
+        let user = await new User({ username, password })
         return user.save()
     } catch (error) {
         return error
@@ -26,7 +26,7 @@ const login = async (username, password) => {
             throw  new mongoose.Error ('invalid data !')
         }
 
-        if (user.username === 'Dobrev') {
+        if (user.username === ADMIN_NAME) {
             let token = jwt.sign({ _id: user._id, username: user.username, role: 'admin' }, SECRET);
             return token
         } else {

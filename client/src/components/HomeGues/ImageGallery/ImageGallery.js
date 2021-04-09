@@ -8,15 +8,14 @@ import apiGallery from '../../../services/apiGallery';
 
 
 
-const ImageGallery = ({
-    token,
-}) => {
+const ImageGallery = () => {
     const [images, SetImages] = useState([]);
 
 useEffect(()=>{
     apiGallery.getAllImages()
     .then(dataImages=>SetImages(dataImages))
     .catch(err=> console.log(err))
+   
 },[])
 
     return (

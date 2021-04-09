@@ -20,6 +20,7 @@ import MyHairStylesList from './components/MyHariStylesList/MyHairStylesList';
 import HairstylesDetails from './components/MyHariStylesList/HairstylesDetails';
 import MyAppointmentsList from './components/MyAppointmentsList/MyAppointmentsList';
 import Allfeedback from './components/AllFeedback.js/Allfeedback';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
 
   return (
     <>
+    <ErrorBoundary>
       <TokenContext.Provider value={[token, setToken]}>
         <Nav />
         <Switch>
@@ -55,6 +57,7 @@ function App() {
         </Switch>
         <Footer />
       </TokenContext.Provider>
+      </ErrorBoundary>
     </>
 
 

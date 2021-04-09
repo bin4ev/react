@@ -12,13 +12,14 @@ function AppointmentForm({
 const [appointment,setApoitment]= useState('');
 const [allStaff]=useGetAllStaff(url) 
 const history=useHistory()
+
 useEffect(()=>{
     if(!appointment){
         return
     }
     apiAppointments.saveAppointment(appointment)
     .then(res=>{ 
-        console.log(res);
+       
         history.push('/homePage')}
       )
     .catch(err=>console.log(err))

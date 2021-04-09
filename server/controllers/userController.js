@@ -15,10 +15,7 @@ router.post('/login', (req, res,next) => {
     const { username, password } = req.body;
     userService.login(username, password)
         .then(token => {
-            console.log(token);
-   
             res.json(token)
-   
         })
         .catch(next)
 })

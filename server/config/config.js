@@ -1,8 +1,9 @@
 const config ={
-    PORT: 5000,
-    DB_URI :'mongodb://localhost/MyReactData',
+    PORT: process.env.PORT || 5000,
+    DB_URI :/* 'mongodb://localhost/MyReactData' */
+    'mongodb+srv://bin4ev123:bin4ev321@cluster0.ge2kj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
     ROUND_SALT: 10,
     SECRET: 'badjanak',
-    COOCKIE_NAME: 'token'
+    ADMIN_NAME: 'Dobrev'
 }
 module.exports = config

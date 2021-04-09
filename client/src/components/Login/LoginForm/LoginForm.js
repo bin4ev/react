@@ -10,10 +10,6 @@ import api from '../../../services/apiUsers';
 import decodedToken from '../../../utils/decodeToken';
 import errorHandler from '../../../utils/errorHandler';
 
-
-
-
-
 function LoginForm({
     history,
 }) {
@@ -40,7 +36,7 @@ function LoginForm({
             
             })
     }
-    console.log(error);
+ 
     return (
         <div className='form'>
             <div className='form-data'>
