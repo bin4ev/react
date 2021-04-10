@@ -1,23 +1,25 @@
-# Getting Started with Create React App
+# Barber application
+***
+This prototype  is  create for small buisiness in haircare & styling industry to help  
+not only for clients to make online appointment ,but allow Company  manage  and organise their services.Feature like add/show  new staff ,clients feedback,galery hairstyles,view appointments are accesed from admin(owner).Every user(staff) can view own arrangment ,add/delete own hairstyle to main gallery
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Screenshot
 
-## Available Scripts
 
-In the project directory, you can run:
+## Installation
+***
+The project is based on MERN stack - [https://wikitia.com/wiki/MERN_(solution_stack)]
+so be sure You already installed all tehnologies.
+See more in Tehnology section
+The main app folder in repo consist client side app and server side app.All needs to do are go in every app and runs in dev mode.
+
 
 ### `npm start`
+Be sure you are in current folder 
+follow npm start on client
+the app will run on  the development mode.\
+Open [http://localhost:3000] to view it in the browser.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
