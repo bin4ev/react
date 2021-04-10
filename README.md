@@ -1,7 +1,7 @@
 # Barber application
 ***
 This prototype  is  create for small buisiness in haircare & styling industry to help  
-not only for clients to make online appointment ,but allow Company  manage  and organise their services.Feature like add/show  new staff ,clients feedback,gallery hairstyles,view appointments are accesed from admin(!!!if you want register Admin be sure on the end of name have "Admin").Every user(staff) can view own arrangment ,add/delete own hairstyle to main gallery
+not only for clients to make online appointment ,but allow Company  manage  and organise their services.Feature like add/show  new staff ,clients feedback,gallery hairstyles,view appointments are accesed from admin(__if you want register Admin be sure on the end of name have "Admin" and there is only one Admin user__).Every user(staff) can view own arrangment ,add/delete own hairstyle to main gallery
 
 
 ## Installation
