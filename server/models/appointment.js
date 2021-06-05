@@ -26,7 +26,8 @@ const appointmentSchema = new mongoose.Schema({
         type: String,
         require: true,
       
-    }
+    },
+    dates:[]
 
 })
 

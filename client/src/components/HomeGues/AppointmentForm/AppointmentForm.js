@@ -1,68 +1,79 @@
-import{useState,useEffect} from 'react';
-import {useHistory} from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import './AppointmentForm.css';
+/* import Scheduler from './Scheduler/Scheduler' */
 import apiAppointments from '../../../services/apiAppointmets';
 import useGetAllStaff from '../../../hook/useFethtAllComponents';
-let url ='http://localhost:5000/staff/all';
+import moment from "moment"
+let url = 'http://localhost:5000/staff/all';
 
 
 function AppointmentForm({
-  
-}){
-const [appointment,setApoitment]= useState('');
-const [allStaff]=useGetAllStaff(url) 
-const history=useHistory()
 
-useEffect(()=>{
-    if(!appointment){
-        return
+}) {
+    const [appointment, setApoitment] = useState('');
+    const [allStaff] = useGetAllStaff(url)
+    const history = useHistory()
+
+    useEffect(() => {
+        if (!appointment) {
+            return
+        }
+        apiAppointments.saveAppointment(appointment)
+            .then(res => {
+
+                history.push('/homePage')
+            }
+            )
+            .catch(err => console.log(err))
+    }, [appointment])
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+
+        setApoitment({
+            [e.target.name.name]: e.target.name.value,
+            [e.target.phone.name]: e.target.phone.value,
+            [e.target.service.name]: e.target.service.value,
+            [e.target.barber.name]: e.target.barber.value,
+        })
     }
-    apiAppointments.saveAppointment(appointment)
-    .then(res=>{ 
-       
-        history.push('/homePage')}
-      )
-    .catch(err=>console.log(err))
-},[appointment])
-
-const submitHandler=(e)=>{
-e.preventDefault();
-
-setApoitment({
-    [e.target.name.name]:e.target.name.value,
-    [e.target.phone.name]:e.target.phone.value,
-    [e.target.service.name]:e.target.service.value,
-    [e.target.barber.name]:e.target.barber.value,
-})  
-}
 
     return (
         <div className='book-wrapper'>
-              <h4>Please book your appointment</h4>
-            <form onSubmit={submitHandler} className='form'>
-                <div >
-                  
+            <h4>Please book your appointment</h4>
+            <form onSubmit={submitHandler} >
+                <div className='form-group' >
+
                     <input type="text" name="name" placeholder='Enter your name:' />
                     <br />
                     <input type="tel" id="phone" name="phone" placeholder='Enter your phone number:' />
                     <br />
                     <label for="service">Service</label>
-                    <br/>
-                    <select name= 'service'>
-                    <option value="SkinFade">Skin Fade</option>
-                    <option value="DryCut">Dry Cut</option>
-                    <option value="Beard">Beard</option>
+                    <br />
+                    <select name='service'>
+                        <option value="SkinFade">Skin Fade</option>
+                        <option value="DryCut">Dry Cut</option>
+                        <option value="Beard">Beard</option>
                     </select>
-                    <br/>
+                    <br />
                     <label for="barbers">Barbers</label>
-                    <br/>
-                    <select name= 'barber'>
-                        {allStaff.map(x=> <option key = {x._id} value={x.name}>{x.name}</option>)}
-                   
+                    <br />
+                    <select name='barber'>
+                        {allStaff.map(x => <option key={x._id} value={x.name}>{x.name}</option>)}
+
                     </select>
+                    <br />
+                    <label> Date:</label>
+                   
+                <input type="date" name="date"/>
                 </div>
+
                 <input type="submit" value="book" />
+             
+
             </form>
+                {/*  <Scheduler/> */}
         </div>
 
     )

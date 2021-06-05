@@ -15,16 +15,18 @@ const staffSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
-    imageUrl:{
+    imageUrl: {
         type: String,
         require: true,
-     
+
     },
-    creator:{
+    creator: {
         type: String,
-    
-       
-    }
+
+
+    },
+
+
 
 })
 
